@@ -50,7 +50,7 @@ namespace PROYECTOIS1
         }
 
         private void _ActualizarTabla()
-        {
+        {/*
             Tabla_Productos.Clear();
             MySqlDataReader reader = null;
             string sql = "SELECT * FROM producto t1 INNER JOIN producto_inventario t2 ON t1.numClave = t2.numCodigo INNER JOIN proveedor t3  ON t1.proveedor = t3.claveProveedor";
@@ -92,7 +92,7 @@ namespace PROYECTOIS1
             finally
             {
                 conexionBD.Close();
-            }
+            }*/
         }
 
         private void Sistema_de_Inventariado_Load(object sender, EventArgs e)
