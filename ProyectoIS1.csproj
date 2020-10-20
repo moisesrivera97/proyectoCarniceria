@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10367CB7-DFDD-4986-9EEB-0D7DE916BE1C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PROYECTOIS1</RootNamespace>
+    <AssemblyName>PROYECTOIS1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actualizar Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actualizar Inventario.Designer.cs">
+      <DependentUpon>Actualizar Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar Productos.Designer.cs">
+      <DependentUpon>Agregar Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar Proveedor.Designer.cs">
+      <DependentUpon>Agregar Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajustes Administrativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajustes Administrativos.Designer.cs">
+      <DependentUpon>Ajustes Administrativos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Eliminar Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar Productos.Designer.cs">
+      <DependentUpon>Eliminar Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar Proveedor.Designer.cs">
+      <DependentUpon>Eliminar Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Productos.Designer.cs">
+      <DependentUpon>Menu Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Proveedores.Designer.cs">
+      <DependentUpon>Menu Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu Ventas.Designer.cs">
+      <DependentUpon>Menu Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modifica Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modifica Productos.Designer.cs">
+      <DependentUpon>Modifica Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modificar Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar Proveedor.Designer.cs">
+      <DependentUpon>Modificar Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Punto de Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Punto de Venta.Designer.cs">
+      <DependentUpon>Punto de Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema de Inventariado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema de Inventariado.Designer.cs">
+      <DependentUpon>Sistema de Inventariado.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Actualizar Inventario.resx">
+      <DependentUpon>Actualizar Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar Productos.resx">
+      <DependentUpon>Agregar Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar Proveedor.resx">
+      <DependentUpon>Agregar Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajustes Administrativos.resx">
+      <DependentUpon>Ajustes Administrativos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar Productos.resx">
+      <DependentUpon>Eliminar Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar Proveedor.resx">
+      <DependentUpon>Eliminar Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu Productos.resx">
+      <DependentUpon>Menu Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu Proveedores.resx">
+      <DependentUpon>Menu Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu Ventas.resx">
+      <DependentUpon>Menu Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modifica Productos.resx">
+      <DependentUpon>Modifica Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modificar Proveedor.resx">
+      <DependentUpon>Modificar Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Punto de Venta.resx">
+      <DependentUpon>Punto de Venta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema de Inventariado.resx">
+      <DependentUpon>Sistema de Inventariado.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
