@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,46 +24,45 @@ namespace PROYECTOIS1
         {
             try
             {
-                int AUX_NumProv = int.Parse(Input_NumProveedor.Text);
-                MySqlDataReader reader = null;
-                string sql = "SELECT nombreProveedor, telefono, direccion FROM proveedor WHERE claveProveedor LIKE '" + AUX_NumProv + "' LIMIT 1";
-                MySqlConnection conexionBD = Conexion.conexion();
-                conexionBD.Open();
+                int BD_idProveedor = int.Parse(Input_NumProveedor.Text);
+                string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Verificar.php";
 
-                try
+                using (WebClient client = new WebClient())
                 {
-                    MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                    reader = comando.ExecuteReader();
-                    if (reader.HasRows)
+                    NameValueCollection postData = new NameValueCollection()
                     {
-                        while (reader.Read())
-                        {
-                            Input_NomProv.Text = reader.GetString(0);
-                            Input_Telefono.Text = reader.GetString(1);
-                            Input_Direccion.Text = reader.GetString(2);
+                          { "bd_idProveedor", BD_idProveedor.ToString() }
+                   };
+                    string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                    if (SW_respuesta[0] == '0')
+                    {
+                        MessageBox.Show("NO EXISTE NINGUN PROVEEDOR CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Input_NumProveedor.Text = "";
 
-                            Boton_Modificar.Enabled = true;
-                            Boton_Limpiar.Enabled = true;
-                            Boton_Verificar.Enabled = false;
-                            Input_NumProveedor.Enabled = false;
-                            Input_NomProv.Enabled = true;
-                            Input_Telefono.Enabled = true;
-                            Input_Direccion.Enabled = true;
-                        }
+                    }
+                    else if (SW_respuesta[0] == '9')
+                    {
+                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     }
                     else
                     {
-                        MessageBox.Show("No se Encontro ningun registro con este codigo.", "ERROR #5:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        char SW_delimitador = ',';
+                        string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                        Input_NomProv.Text = SW_campos[0];
+                        Input_Telefono.Text = SW_campos[1];
+                        Input_Direccion.Text = SW_campos[2];
+                        Input_NumProveedor.Enabled = false;
+                        Input_NomProv.Enabled = true;
+                        Input_Direccion.Enabled = true;
+                        Input_Telefono.Enabled = true;
+                        Boton_Modificar.Enabled = true;
+                        Boton_Limpiar.Enabled = true;
+                        Boton_Verificar.Enabled = false;
+                        Input_NumProveedor.Enabled = false;
                     }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Error al buscar " + ex.Message);
-                }
-                finally
-                {
-                    conexionBD.Close();
+
+
                 }
 
 
@@ -80,57 +81,52 @@ namespace PROYECTOIS1
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deceas modificar el registro \"" + Input_NomProv.Text + "\".",
-                        "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Deceas modificar el proveedor \"" + Input_NomProv.Text + "\".",
+                         "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             switch (dr)
             {
                 case DialogResult.Yes:
+
                     try
                     {
-                        int AUX_NumCod = int.Parse(Input_NumProveedor.Text);
-                        string AUX_NomProv = Input_NomProv.Text.ToUpper();
-                        string AUX_Direccion = Input_Direccion.Text.ToUpper();
-                        string AUX_Telefono = Input_Telefono.Text.ToUpper();
-                        long AUX_Telefono2 = long.Parse(Input_Telefono.Text);
+                        int BD_idProveedor = int.Parse(Input_NumProveedor.Text);
+                        string BD_nombre = Input_NomProv.Text.ToUpper();
+                        string BD_direccion = Input_Direccion.Text.ToUpper();
+                        long BD_telefono = long.Parse(Input_Telefono.Text);
 
-                        if (AUX_NumCod > 0 && AUX_NomProv.Length > 0 && AUX_Direccion.Length > 0 && AUX_Telefono.Length > 0)
+                        if (BD_idProveedor > 0 && BD_nombre.Length > 0 && BD_direccion.Length > 0 && BD_telefono > 0)
                         {
+                            string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Modificar.php";
 
-
-                            string sql = "UPDATE proveedor SET nombreProveedor='" + AUX_NomProv + "', telefono='" + AUX_Telefono + "', direccion='" + AUX_Direccion + "' WHERE claveProveedor='" + AUX_NumCod + "'";
-
-                            MySqlConnection conexionBD = Conexion.conexion();
-                            conexionBD.Open();
-
-                            try
+                            using (WebClient client = new WebClient())
                             {
-                                MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                                comando.ExecuteNonQuery();
-                                MessageBox.Show("Se ah modificado el proveedor correctamente.", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                NameValueCollection postData = new NameValueCollection()
+                {
+                      { "bd_idProveedor", BD_idProveedor.ToString() },
+                      { "bd_nombre", BD_nombre },
+                      { "bd_telefono", BD_telefono.ToString()  },
+                      { "bd_direccion", BD_direccion }
+               };
+                                string respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                                MessageBox.Show(respuesta);
                                 _limpiarCampos();
+                            }
 
-                            }
-                            catch (MySqlException ex)
-                            {
-                                MessageBox.Show("Error al intentar modificar el registro; Es posible que no exista el numero del proveedor que estas actualizando.", "ERROR #5:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                            }
-                            finally
-                            {
-                                conexionBD.Close();
-                            }
                         }
                         else
                         {
-                            MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Falta uno o mas campos por rellenar; Asegurate que todos los  campos esten rellenados", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                     }
                     catch
                     {
-                        MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
+
                     break;
+
             }
         }
 
