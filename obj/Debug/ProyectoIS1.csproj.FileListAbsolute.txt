@@ -36,57 +36,89 @@ C:\Users\alienware\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Proveedores.reso
 C:\Users\alienware\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modificar_Proveedor.resources
 C:\Users\alienware\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Proveedor.resources
 C:\Users\alienware\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Ventas.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe.config
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\bin\Debug\PROYECTOIS1.pdb
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\bin\Debug\MySql.Data.dll
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\bin\Debug\MySql.Data.xml
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\ProyectoIS1.csprojAssemblyReference.cache
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Actualizar_Inventario.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Productos.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Proveedor.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Ajustes_Administrativos.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Productos.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Proveedor.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Inicio.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Login.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Productos.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Proveedores.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Ventas.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modifica_Productos.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modificar_Proveedor.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Properties.Resources.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Punto_de_Venta.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.Sistema_de_Inventariado.resources
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.GenerateResource.cache
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CoreCompileInputs.cache
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CopyComplete
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.exe
-C:\Users\TARASCOS\Desktop\a\CRUD\CRUD\obj\Debug\PROYECTOIS1.pdb
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe.config
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\bin\Debug\PROYECTOIS1.pdb
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\bin\Debug\MySql.Data.dll
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\bin\Debug\MySql.Data.xml
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\ProyectoIS1.csprojAssemblyReference.cache
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Actualizar_Inventario.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Productos.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Proveedor.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Ajustes_Administrativos.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Productos.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Proveedor.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Inicio.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Login.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Productos.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Proveedores.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Ventas.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modifica_Productos.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modificar_Proveedor.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Properties.Resources.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Punto_de_Venta.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.Sistema_de_Inventariado.resources
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.GenerateResource.cache
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CoreCompileInputs.cache
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CopyComplete
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.exe
-C:\Users\TARASCOS\Desktop\C#\Sem.IngSoftware\CRUD\CRUD\obj\Debug\PROYECTOIS1.pdb
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe.config
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\PROYECTOIS1.pdb
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\Google.Protobuf.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\Zstandard.Net.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\Renci.SshNet.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\System.Buffers.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\System.Memory.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\MySql.Data.xml
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\ProyectoIS1.csprojAssemblyReference.cache
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.exe.config
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Actualizar_Inventario.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Productos.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Proveedor.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Ajustes_Administrativos.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Productos.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Proveedor.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Inicio.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Login.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Productos.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Proveedores.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Ventas.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modifica_Productos.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modificar_Proveedor.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Properties.Resources.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Punto_de_Venta.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.Sistema_de_Inventariado.resources
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.GenerateResource.cache
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CoreCompileInputs.cache
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CopyComplete
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.exe
+C:\Users\mayzo\Desktop\CRUD\CRUD\obj\Debug\PROYECTOIS1.pdb
+C:\Users\mayzo\Desktop\CRUD\CRUD\bin\Debug\MySql.Data.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe.config
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\PROYECTOIS1.exe
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\PROYECTOIS1.pdb
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Google.Protobuf.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Zstandard.Net.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\BouncyCastle.Crypto.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Ubiety.Dns.Core.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Renci.SshNet.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\System.Memory.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\System.Buffers.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\K4os.Compression.LZ4.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\K4os.Hash.xxHash.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\MySql.Data.xml
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\ProyectoIS1.csprojAssemblyReference.cache
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.exe.config
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Actualizar_Inventario.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Productos.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Agregar_Proveedor.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Ajustes_Administrativos.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Productos.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Eliminar_Proveedor.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Inicio.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Login.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Productos.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Proveedores.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Menu_Ventas.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modifica_Productos.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Modificar_Proveedor.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Properties.Resources.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Punto_de_Venta.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.Sistema_de_Inventariado.resources
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.GenerateResource.cache
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CoreCompileInputs.cache
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\ProyectoIS1.csproj.CopyComplete
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.exe
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\obj\Debug\PROYECTOIS1.pdb
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\itextsharp.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\itextsharp.xmlworker.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Common.Logging.Core.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Common.Logging.dll
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\BouncyCastle.Crypto.xml
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Common.Logging.pdb
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Common.Logging.xml
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Common.Logging.Core.pdb
+D:\CUCEI\2020B\Seminario de Ingenieria de Software\CRUD\CRUD\bin\Debug\Common.Logging.Core.xml

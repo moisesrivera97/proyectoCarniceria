@@ -40,45 +40,50 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 243);
+            this.label2.Location = new System.Drawing.Point(72, 299);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(85, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Contraseña:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 189);
+            this.label1.Location = new System.Drawing.Point(72, 233);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(61, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "Usuario:";
             // 
             // Input_Contraseña
             // 
             this.Input_Contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Input_Contraseña.Location = new System.Drawing.Point(57, 259);
+            this.Input_Contraseña.Location = new System.Drawing.Point(76, 319);
+            this.Input_Contraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Input_Contraseña.Name = "Input_Contraseña";
             this.Input_Contraseña.PasswordChar = '*';
-            this.Input_Contraseña.Size = new System.Drawing.Size(221, 26);
+            this.Input_Contraseña.Size = new System.Drawing.Size(293, 30);
             this.Input_Contraseña.TabIndex = 9;
             // 
             // Input_Usuario
             // 
             this.Input_Usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Input_Usuario.Location = new System.Drawing.Point(57, 205);
+            this.Input_Usuario.Location = new System.Drawing.Point(76, 252);
+            this.Input_Usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Input_Usuario.Name = "Input_Usuario";
-            this.Input_Usuario.Size = new System.Drawing.Size(221, 26);
+            this.Input_Usuario.Size = new System.Drawing.Size(293, 30);
             this.Input_Usuario.TabIndex = 8;
             // 
             // button1
             // 
             this.button1.AutoEllipsis = true;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(87, 309);
+            this.button1.Location = new System.Drawing.Point(116, 380);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 48);
+            this.button1.Size = new System.Drawing.Size(207, 59);
             this.button1.TabIndex = 7;
             this.button1.Text = "Ingresar";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,27 +92,30 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PROYECTOIS1.Properties.Resources.log;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(285, 139);
+            this.pictureBox1.Size = new System.Drawing.Size(380, 171);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 383);
+            this.ClientSize = new System.Drawing.Size(443, 471);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Input_Contraseña);
             this.Controls.Add(this.Input_Usuario);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Login_FormClosed);
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

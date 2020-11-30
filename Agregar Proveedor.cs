@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Specialized;
+using System.Net;
 
 namespace PROYECTOIS1
 {
@@ -22,48 +24,56 @@ namespace PROYECTOIS1
         {
             try
             {
-                int AUX_NumCod = int.Parse(Input_NumProv.Text);
-                string AUX_NomProv = Input_NomProv.Text.ToUpper();
-                string AUX_Direccion = Input_Direccion.Text.ToUpper();
-                string AUX_Telefono = Input_Telefono.Text.ToUpper();
-                long AUX_Telefono2 = long.Parse(Input_Telefono.Text);
+                int BD_idProveedor = int.Parse(Input_NumProv.Text);
+                string BD_nombre = Input_NomProv.Text.ToUpper();
+                string BD_direccion = Input_Direccion.Text.ToUpper();
+                long BD_telefono = long.Parse(Input_Telefono.Text);
 
-                if (AUX_NumCod > 0 && AUX_NomProv.Length > 0 && AUX_Direccion.Length > 0 && AUX_Telefono.Length > 0)
+                if (BD_idProveedor > 0 && BD_nombre.Length > 0 && BD_direccion.Length > 0 && BD_telefono > 0)
                 {
-                    string sql = "INSERT INTO proveedor (claveProveedor, nombreProveedor, telefono, direccion) VALUES ('" + AUX_NumCod + "', '" + AUX_NomProv + "','" + AUX_Telefono + "','" + AUX_Direccion + "')";
-                    MySqlConnection conexionBD = Conexion.conexion();
-                    conexionBD.Open();
+                    string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Agregar.php";
 
-                    try
+                    using (WebClient client = new WebClient())
                     {
-                        MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                        comando.ExecuteNonQuery();
-                        MessageBox.Show("Se ah agregado el proveedor correctamente.", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        NameValueCollection postData = new NameValueCollection()
+                {
+                      { "bd_idProveedor", BD_idProveedor.ToString() },  
+                      { "bd_nombre", BD_nombre },
+                      { "bd_telefono", BD_telefono.ToString()  },
+                      { "bd_direccion", BD_direccion }
+               };
+                        string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                        switch (SW_respuesta[0])
+                        {
+                            case '0':
+                                MessageBox.Show("FALLA EN LA OPERACION SQL", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
 
+                            case '2':
+                                MessageBox.Show("EL CODIGO DE PROVEEDOR YA EXISTE", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            case '9':
+                                MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            default:
+                                MessageBox.Show("SE AGREGO CORRECTAMENTE EL PROVEEDOR", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
+                        }
                         _limpiarCampos();
                     }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error Al tratar de guardar; Puede que ya exista un registro con esta clave para el proveedor.", "ERROR #6:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
-
-
-                    
                 }
                 else
                 {
-                    MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Falta uno o mas campos por rellenar; Asegurate que todos los  campos esten rellenados", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
             catch
             {
-                MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

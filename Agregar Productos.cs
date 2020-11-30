@@ -1,13 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Collections.Specialized;
 using System.Globalization;
-using System.Linq;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PROYECTOIS1
@@ -23,62 +19,49 @@ namespace PROYECTOIS1
         {
             try
             {
-                int AUX_NumCod = int.Parse(Input_NumProducto.Text);
-                string AUX_NomProd = Input_NomProd.Text.ToUpper();
-                double AUX_Precio = double.Parse(Input_Precio.Text, System.Globalization.NumberFormatInfo.InvariantInfo);
-                int AUX_NumProv = int.Parse(Input_CodigoProveedor.Text);
-                bool FLAG_Guardo = false;
+                int BD_idProducto = int.Parse(Input_NumProducto.Text);
+                string BD_nombre = Input_NomProd.Text.ToUpper();
+                double BD_precio = double.Parse(Input_Precio.Text);
+                int BD_fkProveedor = int.Parse(Input_CodigoProveedor.Text);
 
-                if (AUX_NumCod > 0 && AUX_NomProd.Length > 0 && AUX_Precio > 0 && AUX_NumProv > 0)
+                if (BD_idProducto > 0 && BD_nombre.Length > 0 && BD_precio > 0 && BD_fkProveedor > 0)
                 {
-                    string sql = "INSERT INTO producto (numClave, nombre, precio, proveedor) VALUES ('" + AUX_NumCod + "', '" + AUX_NomProd + "','" + _ToGBString(AUX_Precio) + "','" + AUX_NumProv + "')";
-                    MySqlConnection conexionBD = Conexion.conexion();
-                    conexionBD.Open();
+                    string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Agregar.php";
 
-                    try
+                    using (WebClient client = new WebClient())
                     {
-                        MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                        comando.ExecuteNonQuery();
-                        MessageBox.Show("Se ah agregado el producto correctamente.", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FLAG_Guardo = true;
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error Al tratar de guardar; Puede que ya exista un registro con esta clave para producto o que no exista ningun proveedor con esa clave.", "ERROR #4:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
-
-
-                    if (FLAG_Guardo)
-                    {
-                        sql = "INSERT INTO producto_inventario (numCodigo,pesoProducto) VALUES ('" + AUX_NumCod + "', ' 0')";
-
-                        conexionBD.Open();
-
-                        try
+                        NameValueCollection postData = new NameValueCollection()
+                {
+                      { "bd_idProducto", BD_idProducto.ToString() },
+                      { "bd_nombre", BD_nombre },
+                      { "bd_precio", BD_precio.ToString()  },
+                      { "bd_fkProveedor", BD_fkProveedor.ToString()}
+               };
+                        string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                        switch (SW_respuesta[0])
                         {
-                            MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                            comando.ExecuteNonQuery();
-                            _limpiarCampos();
-                        }
-                        catch (MySqlException ex)
-                        {
-                            MessageBox.Show("Error Al tratar de guardar; Puede que ya exista un registro con esta clave para producto o que no exista ningun proveedor con esa clave.", "ERROR #4:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            case '0':
+                                MessageBox.Show("NO EXISTE EL CODIGO DE ESE PROVEEDOR", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
 
+                            case '2':
+                                MessageBox.Show("EL CODIGO DE PRODUCTO YA EXISTE", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            case '9':
+                                MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            default:
+                                MessageBox.Show("SE AGREGO CORRECTAMENTE EL PRODUCTO", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                break;
                         }
-                        finally
-                        {
-                            conexionBD.Close();
-                        }
+                        _limpiarCampos();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Falta uno o mas campos por rellenar; Asegurate que todos los  campos esten rellenados", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -104,9 +87,6 @@ namespace PROYECTOIS1
 
 
         }
-        private string _ToGBString(double value)
-        {
-            return value.ToString(CultureInfo.GetCultureInfo("en-GB"));
-        }
+       
     }
 }

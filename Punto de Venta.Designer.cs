@@ -56,6 +56,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Timer_Segundero = new System.Windows.Forms.Timer(this.components);
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.Boton_CancelarProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -71,9 +72,10 @@
             // 
             // Boton_RealizarCorte
             // 
-            this.Boton_RealizarCorte.Location = new System.Drawing.Point(823, 362);
+            this.Boton_RealizarCorte.Location = new System.Drawing.Point(1097, 446);
+            this.Boton_RealizarCorte.Margin = new System.Windows.Forms.Padding(4);
             this.Boton_RealizarCorte.Name = "Boton_RealizarCorte";
-            this.Boton_RealizarCorte.Size = new System.Drawing.Size(110, 61);
+            this.Boton_RealizarCorte.Size = new System.Drawing.Size(147, 75);
             this.Boton_RealizarCorte.TabIndex = 49;
             this.Boton_RealizarCorte.Text = "Realizar Corte";
             this.Boton_RealizarCorte.UseVisualStyleBackColor = true;
@@ -82,36 +84,40 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox10.Location = new System.Drawing.Point(44, 158);
+            this.pictureBox10.Location = new System.Drawing.Point(59, 194);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(724, 3);
+            this.pictureBox10.Size = new System.Drawing.Size(965, 4);
             this.pictureBox10.TabIndex = 48;
             this.pictureBox10.TabStop = false;
             // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox9.Location = new System.Drawing.Point(645, 137);
+            this.pictureBox9.Location = new System.Drawing.Point(860, 169);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(2, 240);
+            this.pictureBox9.Size = new System.Drawing.Size(3, 295);
             this.pictureBox9.TabIndex = 47;
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox8.Location = new System.Drawing.Point(525, 137);
+            this.pictureBox8.Location = new System.Drawing.Point(700, 169);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(2, 240);
+            this.pictureBox8.Size = new System.Drawing.Size(3, 295);
             this.pictureBox8.TabIndex = 46;
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox7.Location = new System.Drawing.Point(404, 136);
+            this.pictureBox7.Location = new System.Drawing.Point(539, 167);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(2, 240);
+            this.pictureBox7.Size = new System.Drawing.Size(3, 295);
             this.pictureBox7.TabIndex = 45;
             this.pictureBox7.TabStop = false;
             // 
@@ -120,45 +126,50 @@
             this.Label_TotalDinero.AutoSize = true;
             this.Label_TotalDinero.BackColor = System.Drawing.Color.Transparent;
             this.Label_TotalDinero.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_TotalDinero.Location = new System.Drawing.Point(88, 411);
+            this.Label_TotalDinero.Location = new System.Drawing.Point(117, 506);
+            this.Label_TotalDinero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_TotalDinero.Name = "Label_TotalDinero";
-            this.Label_TotalDinero.Size = new System.Drawing.Size(45, 24);
+            this.Label_TotalDinero.Size = new System.Drawing.Size(58, 29);
             this.Label_TotalDinero.TabIndex = 44;
             this.Label_TotalDinero.Text = "0.00";
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox6.Location = new System.Drawing.Point(80, 407);
+            this.pictureBox6.Location = new System.Drawing.Point(107, 501);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(3, 33);
+            this.pictureBox6.Size = new System.Drawing.Size(4, 41);
             this.pictureBox6.TabIndex = 43;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox5.Location = new System.Drawing.Point(290, 407);
+            this.pictureBox5.Location = new System.Drawing.Point(387, 501);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(3, 33);
+            this.pictureBox5.Size = new System.Drawing.Size(4, 41);
             this.pictureBox5.TabIndex = 42;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox4.Location = new System.Drawing.Point(80, 437);
+            this.pictureBox4.Location = new System.Drawing.Point(107, 538);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(210, 3);
+            this.pictureBox4.Size = new System.Drawing.Size(280, 4);
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox3.Location = new System.Drawing.Point(80, 407);
+            this.pictureBox3.Location = new System.Drawing.Point(107, 501);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(210, 3);
+            this.pictureBox3.Size = new System.Drawing.Size(280, 4);
             this.pictureBox3.TabIndex = 40;
             this.pictureBox3.TabStop = false;
             // 
@@ -166,29 +177,32 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 405);
+            this.label5.Location = new System.Drawing.Point(57, 498);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 33);
+            this.label5.Size = new System.Drawing.Size(39, 42);
             this.label5.TabIndex = 39;
             this.label5.Text = "$";
             // 
             // Boton_Cancelar
             // 
             this.Boton_Cancelar.Enabled = false;
-            this.Boton_Cancelar.Location = new System.Drawing.Point(823, 263);
+            this.Boton_Cancelar.Location = new System.Drawing.Point(1097, 324);
+            this.Boton_Cancelar.Margin = new System.Windows.Forms.Padding(4);
             this.Boton_Cancelar.Name = "Boton_Cancelar";
-            this.Boton_Cancelar.Size = new System.Drawing.Size(110, 61);
+            this.Boton_Cancelar.Size = new System.Drawing.Size(147, 75);
             this.Boton_Cancelar.TabIndex = 38;
-            this.Boton_Cancelar.Text = "Cancelar";
+            this.Boton_Cancelar.Text = "Cancelar Venta";
             this.Boton_Cancelar.UseVisualStyleBackColor = true;
             this.Boton_Cancelar.Click += new System.EventHandler(this.Boton_Cancelar_Click);
             // 
             // Boton_Pagar
             // 
             this.Boton_Pagar.Enabled = false;
-            this.Boton_Pagar.Location = new System.Drawing.Point(823, 158);
+            this.Boton_Pagar.Location = new System.Drawing.Point(1097, 194);
+            this.Boton_Pagar.Margin = new System.Windows.Forms.Padding(4);
             this.Boton_Pagar.Name = "Boton_Pagar";
-            this.Boton_Pagar.Size = new System.Drawing.Size(110, 61);
+            this.Boton_Pagar.Size = new System.Drawing.Size(147, 75);
             this.Boton_Pagar.TabIndex = 37;
             this.Boton_Pagar.Text = "Pagar";
             this.Boton_Pagar.UseVisualStyleBackColor = true;
@@ -198,19 +212,20 @@
             // 
             this.Tabla_ProdcutosDeVenta.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.Tabla_ProdcutosDeVenta.HideSelection = false;
-            this.Tabla_ProdcutosDeVenta.Location = new System.Drawing.Point(43, 136);
+            this.Tabla_ProdcutosDeVenta.Location = new System.Drawing.Point(57, 167);
+            this.Tabla_ProdcutosDeVenta.Margin = new System.Windows.Forms.Padding(4);
             this.Tabla_ProdcutosDeVenta.Name = "Tabla_ProdcutosDeVenta";
-            this.Tabla_ProdcutosDeVenta.Size = new System.Drawing.Size(726, 240);
+            this.Tabla_ProdcutosDeVenta.Size = new System.Drawing.Size(967, 294);
             this.Tabla_ProdcutosDeVenta.TabIndex = 36;
             this.Tabla_ProdcutosDeVenta.UseCompatibleStateImageBehavior = false;
             this.Tabla_ProdcutosDeVenta.View = System.Windows.Forms.View.Details;
-            this.Tabla_ProdcutosDeVenta.SelectedIndexChanged += new System.EventHandler(this.Tabla_ProdcutosDeVenta_SelectedIndexChanged);
             // 
             // Boton_AgregarProducto
             // 
-            this.Boton_AgregarProducto.Location = new System.Drawing.Point(745, 67);
+            this.Boton_AgregarProducto.Location = new System.Drawing.Point(993, 82);
+            this.Boton_AgregarProducto.Margin = new System.Windows.Forms.Padding(4);
             this.Boton_AgregarProducto.Name = "Boton_AgregarProducto";
-            this.Boton_AgregarProducto.Size = new System.Drawing.Size(109, 32);
+            this.Boton_AgregarProducto.Size = new System.Drawing.Size(145, 39);
             this.Boton_AgregarProducto.TabIndex = 35;
             this.Boton_AgregarProducto.Text = "Agregar";
             this.Boton_AgregarProducto.UseVisualStyleBackColor = true;
@@ -218,90 +233,98 @@
             // 
             // Input_PesoProducto
             // 
-            this.Input_PesoProducto.Location = new System.Drawing.Point(517, 74);
+            this.Input_PesoProducto.Location = new System.Drawing.Point(689, 91);
+            this.Input_PesoProducto.Margin = new System.Windows.Forms.Padding(4);
             this.Input_PesoProducto.Name = "Input_PesoProducto";
-            this.Input_PesoProducto.Size = new System.Drawing.Size(131, 20);
+            this.Input_PesoProducto.Size = new System.Drawing.Size(173, 22);
             this.Input_PesoProducto.TabIndex = 34;
-            this.Input_PesoProducto.TextChanged += new System.EventHandler(this.Input_PesoProducto_TextChanged);
             this.Input_PesoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_PesoProducto_KeyPress_1);
             // 
             // Input_CodProducto
             // 
-            this.Input_CodProducto.Location = new System.Drawing.Point(194, 74);
+            this.Input_CodProducto.Location = new System.Drawing.Point(259, 91);
+            this.Input_CodProducto.Margin = new System.Windows.Forms.Padding(4);
             this.Input_CodProducto.Name = "Input_CodProducto";
-            this.Input_CodProducto.Size = new System.Drawing.Size(97, 20);
+            this.Input_CodProducto.Size = new System.Drawing.Size(128, 22);
             this.Input_CodProducto.TabIndex = 33;
             this.Input_CodProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Input_CodProducto_KeyPress_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(392, 77);
+            this.label4.Location = new System.Drawing.Point(523, 95);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 13);
+            this.label4.Size = new System.Drawing.Size(159, 17);
             this.label4.TabIndex = 32;
             this.label4.Text = "Peso del Producto (Kg):";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 76);
+            this.label3.Location = new System.Drawing.Point(108, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 13);
+            this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 31;
             this.label3.Text = "Codigo del Producto:";
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 108);
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 133);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1000, 5);
+            this.pictureBox2.Size = new System.Drawing.Size(1333, 6);
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
             // Label_NumTicket
             // 
             this.Label_NumTicket.AutoSize = true;
-            this.Label_NumTicket.Location = new System.Drawing.Point(465, 10);
+            this.Label_NumTicket.Location = new System.Drawing.Point(620, 12);
+            this.Label_NumTicket.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_NumTicket.Name = "Label_NumTicket";
-            this.Label_NumTicket.Size = new System.Drawing.Size(0, 13);
+            this.Label_NumTicket.Size = new System.Drawing.Size(0, 17);
             this.Label_NumTicket.TabIndex = 29;
-            this.Label_NumTicket.Click += new System.EventHandler(this.Label_NumTicket_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(358, 9);
+            this.label2.Location = new System.Drawing.Point(477, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(124, 17);
             this.label2.TabIndex = 28;
             this.label2.Text = "Numero de Ticket:";
             // 
             // Label_Hora
             // 
             this.Label_Hora.AutoSize = true;
-            this.Label_Hora.Location = new System.Drawing.Point(889, 29);
+            this.Label_Hora.Location = new System.Drawing.Point(1185, 36);
+            this.Label_Hora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Hora.Name = "Label_Hora";
-            this.Label_Hora.Size = new System.Drawing.Size(13, 13);
+            this.Label_Hora.Size = new System.Drawing.Size(16, 17);
             this.Label_Hora.TabIndex = 27;
             this.Label_Hora.Text = "0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(880, 9);
+            this.label1.Location = new System.Drawing.Point(1173, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(43, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "Hora:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 62);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1000, 5);
+            this.pictureBox1.Size = new System.Drawing.Size(1333, 6);
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
@@ -314,17 +337,31 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox11.Location = new System.Drawing.Point(143, 137);
+            this.pictureBox11.Location = new System.Drawing.Point(191, 169);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(2, 240);
+            this.pictureBox11.Size = new System.Drawing.Size(3, 295);
             this.pictureBox11.TabIndex = 50;
             this.pictureBox11.TabStop = false;
             // 
+            // Boton_CancelarProducto
+            // 
+            this.Boton_CancelarProducto.Enabled = false;
+            this.Boton_CancelarProducto.Location = new System.Drawing.Point(887, 469);
+            this.Boton_CancelarProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.Boton_CancelarProducto.Name = "Boton_CancelarProducto";
+            this.Boton_CancelarProducto.Size = new System.Drawing.Size(147, 75);
+            this.Boton_CancelarProducto.TabIndex = 51;
+            this.Boton_CancelarProducto.Text = "Cancelar Producto";
+            this.Boton_CancelarProducto.UseVisualStyleBackColor = true;
+            this.Boton_CancelarProducto.Click += new System.EventHandler(this.Boton_CancelarProducto_Click);
+            // 
             // Punto_de_Venta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 554);
+            this.Controls.Add(this.Boton_CancelarProducto);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.Boton_RealizarCorte);
             this.Controls.Add(this.pictureBox10);
@@ -351,6 +388,7 @@
             this.Controls.Add(this.Label_Hora);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Punto_de_Venta";
             this.Text = "Punto_de_Venta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Punto_de_Venta_FormClosed_1);
@@ -399,5 +437,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer Timer_Segundero;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button Boton_CancelarProducto;
     }
 }
