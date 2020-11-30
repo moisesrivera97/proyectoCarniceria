@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,33 +21,64 @@ namespace PROYECTOIS1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Input_Usuario.Text == "admin" && Input_Contraseña.Text == "admin")
+            string BD_idEmpleado = Input_Usuario.Text;
+            string BD_contrasena = Input_Contraseña.Text;
+
+            string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Empleado_Verificar.php";
+
+            using (WebClient client = new WebClient())
             {
-                Inicio In = new Inicio(1);
-                In.Show();
-                this.Close();
+                NameValueCollection postData = new NameValueCollection()
+                    {
+                          { "bd_idEmpleado", BD_idEmpleado},
+                          { "bd_contrasena", BD_contrasena}
+                   };
+                string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                switch (SW_respuesta[0])
+                {
+                    case '0':
+                        MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Input_Usuario.Text = "";
+                        Input_Contraseña.Text = "";
+                        break;
+
+                    case '9':
+                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Input_Usuario.Text = "";
+                        Input_Contraseña.Text = "";
+                        break;
+
+                    default:
+                        char SW_delimitador = ',';
+                        string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                        string SW_nombre = SW_campos[0];
+                        int SW_tipo = int.Parse(SW_campos[1]);
+
+                        //TIPOS: 1:Admin 2:Cajero  3:Inventariado
+                        //cuentas default: usuario: 100             contraseña: nombre1         tipo: Admin
+                        //cuentas default: usuario: 101             contraseña: nombre2         tipo: Cajero
+                        //cuentas default: usuario: 102             contraseña: nombre3         tipo: Inventariado
+                        MessageBox.Show("Nombre: " + SW_nombre + "\nTipo De Usuario: " + SW_tipo);
+                        Inicio In = new Inicio(SW_tipo);
+                        In.Show();
+                        this.Close();
+                        break;
+
+                }
+                
+
             }
-            else if (Input_Usuario.Text == "cajero" && Input_Contraseña.Text == "cajero")
-            {
-                Inicio In = new Inicio(2);
-                In.Show();
-                this.Close();
-            }
-            else if (Input_Usuario.Text == "inventariado" && Input_Contraseña.Text == "inventariado")
-            {
-                Inicio In = new Inicio(3);
-                In.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Nombre de usuario o contraseña incorrecta.", "ERROR #1:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

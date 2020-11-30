@@ -1,11 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,46 +40,46 @@ namespace PROYECTOIS1
         {
             try
             {
-                int AUX_NumCod = int.Parse(Input_NumProducto.Text);
-                MySqlDataReader reader = null;
-                string sql = "SELECT nombre, precio, proveedor FROM producto WHERE numClave LIKE '" + AUX_NumCod + "' LIMIT 1";
-                MySqlConnection conexionBD = Conexion.conexion();
-                conexionBD.Open();
+                int BD_idProveedor = int.Parse(Input_NumProducto.Text);
+                string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Verificar.php";
 
-                try
+                using (WebClient client = new WebClient())
                 {
-                    MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                    reader = comando.ExecuteReader();
-                    if (reader.HasRows)
+                    NameValueCollection postData = new NameValueCollection()
                     {
-                        while (reader.Read())
-                        {
-                            Input_NomProd.Text = reader.GetString(0);
-                            Input_Precio.Text = reader.GetString(1);
-                            Input_CodigoProveedor.Text = reader.GetString(2);
+                          { "bd_idProducto", BD_idProveedor.ToString() }
+                   };
 
+                    string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                    switch (SW_respuesta[0])
+                    {
+                        case '0':
+                            MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Input_NumProducto.Text = "";
+                            break;
+
+                        case '9':
+                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+
+                        default:
+                            char SW_delimitador = ',';
+                            string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                            Input_NomProd.Text = SW_campos[0];
+                            Input_Precio.Text = SW_campos[1];
+                            Input_CodigoProveedor.Text = SW_campos[2];
+                            Input_NomProd.Enabled = true;
+                            Input_Precio.Enabled = true;
+                            Input_CodigoProveedor.Enabled = true;
                             Boton_Modificar.Enabled = true;
                             Boton_Limpiar.Enabled = true;
                             Boton_Verificar.Enabled = false;
                             Input_NumProducto.Enabled = false;
-                            Input_NomProd.Enabled = true;
-                            Input_Precio.Enabled = true;
-                            Input_CodigoProveedor.Enabled = true;
-                        }
+                            break;
                     }
-                    else
-                    {
-                        MessageBox.Show("No se Encontro ningun registro con este codigo.", "ERROR #5:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Error al buscar " + ex.Message);
-                }
-                finally
-                {
-                    conexionBD.Close();
+
+
                 }
 
 
@@ -87,60 +89,76 @@ namespace PROYECTOIS1
                 MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            
         }
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deceas modificar el registro \"" + Input_NomProd.Text + "\".",
-                        "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Deceas modificar el producto \"" + Input_NumProducto.Text + "\".",
+                        "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             switch (dr)
             {
                 case DialogResult.Yes:
+
                     try
                     {
-                        int AUX_NumCod = int.Parse(Input_NumProducto.Text);
-                        string AUX_NomProd = Input_NomProd.Text.ToUpper();
-                        double AUX_Precio = double.Parse(Input_Precio.Text, System.Globalization.NumberFormatInfo.InvariantInfo);
-                        int AUX_NumProv = int.Parse(Input_CodigoProveedor.Text);
+                        int BD_idProveedor = int.Parse(Input_NumProducto.Text);
+                        string BD_nombre = Input_NomProd.Text.ToUpper();
+                        double BD_precio = double.Parse(Input_Precio.Text);
+                        int BD_fkProveedor = int.Parse(Input_CodigoProveedor.Text);
 
-                        if (AUX_NumCod > 0 && AUX_NomProd.Length > 0 && AUX_Precio > 0 && AUX_NumProv > 0)
+                        if (BD_idProveedor > 0 && BD_nombre.Length > 0 && BD_precio > 0 && BD_fkProveedor > 0)
                         {
+                            string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Modificar.php";
 
-                            MessageBox.Show(_ToGBString(AUX_Precio));
-                            string sql = "UPDATE producto SET nombre='" + AUX_NomProd + "', precio='" + _ToGBString(AUX_Precio) + "', proveedor='" + AUX_NumProv + "' WHERE numClave='" + AUX_NumCod + "'";
-
-                            MySqlConnection conexionBD = Conexion.conexion();
-                            conexionBD.Open();
-
-                            try
+                            using (WebClient client = new WebClient())
                             {
-                                MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                                comando.ExecuteNonQuery();
-                                MessageBox.Show("Se ah modificado el producto correctamente.", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                NameValueCollection postData = new NameValueCollection()
+                {
+                      { "bd_idProducto", BD_idProveedor.ToString() },
+                      { "bd_nombre", BD_nombre },
+                      { "bd_precio", BD_precio.ToString()  },
+                      { "bd_fkProveedor", BD_fkProveedor.ToString() }
+               };
+                                string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                                switch (SW_respuesta[0])
+                                {
+                                    case '0':
+                                        MessageBox.Show("NO SE ENCUENTRA NINGUN PROVEEDOR CON ESTE ID", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+
+                                    case '8':
+                                        MessageBox.Show("ESE PROVEEDOR NO EXISTE", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                                        break;
+                                    case '9':
+                                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+
+                                    default:
+                                        MessageBox.Show("SE MODIFICO CORRECTAMENTE EL PRODUCTO", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        break;
+                                }
                                 _limpiarCampos();
 
-                            }
-                            catch (MySqlException ex)
-                            {
-                                MessageBox.Show("Error al intentar modificar el registro; Es posible que no exista el numero del proveedor que estas actualizando.", "ERROR #5:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                                
                             }
-                            finally
-                            {
-                                conexionBD.Close();
-                            }
+
                         }
                         else
                         {
-                            MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Falta uno o mas campos por rellenar; Asegurate que todos los  campos esten rellenados", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                     }
                     catch
                     {
-                        MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
+
                     break;
+
             }
         }
 
@@ -165,9 +183,6 @@ namespace PROYECTOIS1
             Input_CodigoProveedor.Enabled = false;
         }
 
-        private string _ToGBString(double value)
-        {
-            return value.ToString(CultureInfo.GetCultureInfo("en-GB"));
-        }
+      
     }
 }

@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,46 +24,42 @@ namespace PROYECTOIS1
         {
             try
             {
-                int AUX_NumProv = int.Parse(Input_NumProv.Text);
-                MySqlDataReader reader = null;
-                string sql = "SELECT nombreProveedor, telefono, direccion FROM proveedor WHERE claveProveedor LIKE '" + AUX_NumProv + "' LIMIT 1";
-                MySqlConnection conexionBD = Conexion.conexion();
-                conexionBD.Open();
+                int BD_idProveedor = int.Parse(Input_NumProv.Text);
+                string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Verificar.php";
 
-                try
+                using (WebClient client = new WebClient())
                 {
-                    MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                    reader = comando.ExecuteReader();
-                    if (reader.HasRows)
+                    NameValueCollection postData = new NameValueCollection()
                     {
-                        while (reader.Read())
-                        {
-                            Input_NomProv.Text = reader.GetString(0);
-                            Input_Telefono.Text = reader.GetString(1);
-                            Input_Direccion.Text = reader.GetString(2);
+                          { "bd_idProveedor", BD_idProveedor.ToString() }
+                   };
 
+                    string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                    switch (SW_respuesta[0])
+                    {
+                        case '0':
+                            MessageBox.Show("NO EXISTE NINGUN PROVEEDOR CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+
+
+                        case '9':
+                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+
+                        default:
+                            char SW_delimitador = ',';
+                            string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                            Input_NomProv.Text = SW_campos[0];
+                            Input_Telefono.Text = SW_campos[1];
+                            Input_Direccion.Text = SW_campos[2];
                             Boton_Eliminar.Enabled = true;
                             Boton_Limpiar.Enabled = true;
                             Boton_Verificar.Enabled = false;
-                            Input_NumProv.Enabled = false;
-                            Input_NomProv.Enabled = false;
-                            Input_Telefono.Enabled = false;
-                            Input_Direccion.Enabled = false;
-                        }
+                            Input_NumProv.Enabled = false; break;
                     }
-                    else
-                    {
-                        MessageBox.Show("No se Encontro ningun registro con este codigo.", "ERROR #5:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                  
 
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Error al buscar " + ex.Message);
-                }
-                finally
-                {
-                    conexionBD.Close();
+                        
                 }
 
 
@@ -85,29 +83,41 @@ namespace PROYECTOIS1
             switch (dr)
             {
                 case DialogResult.Yes:
-                    int AUX_NumCod = int.Parse(Input_NumProv.Text);
-                    string sql = "DELETE FROM proveedor WHERE claveProveedor='" + AUX_NumCod + "'";
+                    
+                        int AUX_NumCod = int.Parse(Input_NumProv.Text);
+                        int BD_idProveedor = int.Parse(Input_NumProv.Text);
+                        string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Eliminar.php";
 
-                    MySqlConnection conexionBD = Conexion.conexion();
-                    conexionBD.Open();
-
-                    try
+                        using (WebClient client = new WebClient())
+                        {
+                            NameValueCollection postData = new NameValueCollection()
                     {
-                        MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                        comando.ExecuteNonQuery();
-                        MessageBox.Show("Se ah eliminado el proveedor correctamente.", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                          { "bd_idProveedor", BD_idProveedor.ToString() }
+                   };
+                        string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                        switch (SW_respuesta[0])
+                        {
+                            case '0':
+                                MessageBox.Show("NO SE PUEDE BORRAR A ESTE PROVEDOR POR QUE AUN HAY PRODUCTOS ASOCIADOS CON EL: ", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
 
+                            case '2':
+                                MessageBox.Show("EL CODIGO DE PRODUCTO YA EXISTE", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            case '9':
+                                MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+
+                            default:
+                                MessageBox.Show("Borrado con exito");
+                                break;
+                        }
                         _limpiarCampos();
+                      
 
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error al tratar de eliminar; Aun existen productos que son abastecidos por este proveedor, para eliminar este proveedor primero tienes que modificar los productos relacionados con este proveedor..", "ERROR #7:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
+                        }
+                    
                     break;
 
             }
@@ -130,5 +140,7 @@ namespace PROYECTOIS1
             Boton_Verificar.Enabled = true;
             Input_NumProv.Enabled = true;
         }
+
+      
     }
 }
