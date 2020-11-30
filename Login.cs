@@ -34,38 +34,38 @@ namespace PROYECTOIS1
                           { "bd_contrasena", BD_contrasena}
                    };
                 string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
-                MessageBox.Show("RESP: "+SW_respuesta);
-                if (SW_respuesta[0] == '0')
+                switch (SW_respuesta[0])
                 {
-                    MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Input_Usuario.Text = "";
-                    Input_Contraseña.Text = "";
+                    case '0':
+                        MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Input_Usuario.Text = "";
+                        Input_Contraseña.Text = "";
+                        break;
+
+                    case '9':
+                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Input_Usuario.Text = "";
+                        Input_Contraseña.Text = "";
+                        break;
+
+                    default:
+                        char SW_delimitador = ',';
+                        string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                        string SW_nombre = SW_campos[0];
+                        int SW_tipo = int.Parse(SW_campos[1]);
+
+                        //TIPOS: 1:Admin 2:Cajero  3:Inventariado
+                        //cuentas default: usuario: 100             contraseña: nombre1         tipo: Admin
+                        //cuentas default: usuario: 101             contraseña: nombre2         tipo: Cajero
+                        //cuentas default: usuario: 102             contraseña: nombre3         tipo: Inventariado
+                        MessageBox.Show("Nombre: " + SW_nombre + "\nTipo De Usuario: " + SW_tipo);
+                        Inicio In = new Inicio(SW_tipo);
+                        In.Show();
+                        this.Close();
+                        break;
 
                 }
-                else if (SW_respuesta[0] == '9')
-                {
-                    MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Input_Usuario.Text = "";
-                    Input_Contraseña.Text = "";
-                }
-                else
-                {
-                    char SW_delimitador = ',';
-                    string[] SW_campos = SW_respuesta.Split(SW_delimitador);
-                    string SW_nombre = SW_campos[0];
-                    int SW_tipo  = int.Parse(SW_campos[1]);
-
-                    //TIPOS: 1:Admin 2:Cajero  3:Inventariado
-                    //cuentas default: usuario: 100             contraseña: nombre1         tipo: Admin
-                    //cuentas default: usuario: 101             contraseña: nombre2         tipo: Cajero
-                    //cuentas default: usuario: 102             contraseña: nombre3         tipo: Inventariado
-
-                    Inicio In = new Inicio(SW_tipo);
-                    In.Show();
-                    this.Close();
-
-                }
-
+                
 
             }
             

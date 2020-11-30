@@ -34,33 +34,35 @@ namespace PROYECTOIS1
                           { "bd_idProveedor", BD_idProveedor.ToString() }
                    };
                     string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
-                    if (SW_respuesta[0] == '0')
+                    switch (SW_respuesta[0])
                     {
-                        MessageBox.Show("NO EXISTE NINGUN PROVEEDOR CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Input_NumProveedor.Text = "";
+                        case '0':
+                            MessageBox.Show("NO EXISTE NINGUN PROVEEDOR CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
 
-                    }
-                    else if (SW_respuesta[0] == '9')
-                    {
-                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                        case '9':
+                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+
+                        default:
+
+                            char SW_delimitador = ',';
+                            string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                            Input_NomProv.Text = SW_campos[0];
+                            Input_Telefono.Text = SW_campos[1];
+                            Input_Direccion.Text = SW_campos[2];
+                            Input_NumProveedor.Enabled = false;
+                            Input_NomProv.Enabled = true;
+                            Input_Direccion.Enabled = true;
+                            Input_Telefono.Enabled = true;
+                            Boton_Modificar.Enabled = true;
+                            Boton_Limpiar.Enabled = true;
+                            Boton_Verificar.Enabled = false;
+                            Input_NumProveedor.Enabled = false; 
+                            break;
                     }
-                    else
-                    {
-                        char SW_delimitador = ',';
-                        string[] SW_campos = SW_respuesta.Split(SW_delimitador);
-                        Input_NomProv.Text = SW_campos[0];
-                        Input_Telefono.Text = SW_campos[1];
-                        Input_Direccion.Text = SW_campos[2];
-                        Input_NumProveedor.Enabled = false;
-                        Input_NomProv.Enabled = true;
-                        Input_Direccion.Enabled = true;
-                        Input_Telefono.Enabled = true;
-                        Boton_Modificar.Enabled = true;
-                        Boton_Limpiar.Enabled = true;
-                        Boton_Verificar.Enabled = false;
-                        Input_NumProveedor.Enabled = false;
-                    }
+                    
 
 
                 }
@@ -107,8 +109,22 @@ namespace PROYECTOIS1
                       { "bd_telefono", BD_telefono.ToString()  },
                       { "bd_direccion", BD_direccion }
                };
-                                string respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
-                                MessageBox.Show(respuesta);
+                                string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                                switch (SW_respuesta[0])
+                                {
+                                    case '0':
+                                        MessageBox.Show("FALLA EN LA SENTENCAI SQL ", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+
+                                   
+                                    case '9':
+                                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+
+                                    default:
+                                        MessageBox.Show("Modificado con exito");
+                                        break;
+                                }
                                 _limpiarCampos();
                             }
 

@@ -114,7 +114,6 @@
             this.Name = "Actualizar_Inventario";
             this.Text = "Actualizar_Inventario";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Actualizar_Inventario_FormClosed_1);
-            this.Load += new System.EventHandler(this.Actualizar_Inventario_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

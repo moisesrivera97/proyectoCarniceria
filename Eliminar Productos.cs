@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,43 +30,43 @@ namespace PROYECTOIS1
         {
             try
             {
-                int AUX_NumCod = int.Parse(Input_NumProducto.Text);
-                MySqlDataReader reader = null;
-                string sql = "SELECT nombre, precio, proveedor FROM producto WHERE numClave LIKE '" + AUX_NumCod + "' LIMIT 1";
-                MySqlConnection conexionBD = Conexion.conexion();
-                conexionBD.Open();
+                int BD_idProveedor = int.Parse(Input_NumProducto.Text);
+                string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Verificar.php";
 
-                try
+                using (WebClient client = new WebClient())
                 {
-                    MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                    reader = comando.ExecuteReader();
-                    if (reader.HasRows)
+                    NameValueCollection postData = new NameValueCollection()
                     {
-                        while (reader.Read())
-                        {
-                            Input_NomProd.Text = reader.GetString(0);
-                            Input_Precio.Text = reader.GetString(1);
-                            Input_CodigoProveedor.Text = reader.GetString(2);
+                          { "bd_idProducto", BD_idProveedor.ToString() }
+                   };
 
+                    string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                    switch (SW_respuesta[0])
+                    {
+                        case '0':
+                            MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Input_NumProducto.Text = "";
+                            break;
+
+                        case '9':
+                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+
+                        default:
+                            char SW_delimitador = ',';
+                            string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                            Input_NomProd.Text = SW_campos[0];
+                            Input_Precio.Text = SW_campos[1];
+                            Input_CodigoProveedor.Text = SW_campos[2];
                             Boton_Eliminar.Enabled = true;
                             Boton_Limpiar.Enabled = true;
                             Boton_Verificar.Enabled = false;
                             Input_NumProducto.Enabled = false;
-                        }
+                            break;
                     }
-                    else
-                    {
-                        MessageBox.Show("No se Encontro ningun registro con este codigo.", "ERROR #5:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                   
 
-                    }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Error al buscar " + ex.Message);
-                }
-                finally
-                {
-                    conexionBD.Close();
                 }
 
 
@@ -78,57 +80,55 @@ namespace PROYECTOIS1
 
         private void Boton_Eliminar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deceas borrar el registro \""+Input_NomProd.Text+"\".",
-                         "ADVERTENCIA", MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
-            switch (dr)
+            try
             {
-                case DialogResult.Yes:
-                    int AUX_NumCod = int.Parse(Input_NumProducto.Text);
-                    string sql = "DELETE FROM producto_inventario WHERE numCodigo='" + AUX_NumCod + "'";
+                int BD_idProveedor = int.Parse(Input_NumProducto.Text);
+                string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Eliminar.php";
 
-                    MySqlConnection conexionBD = Conexion.conexion();
-                    conexionBD.Open();
-
-                    try
+                using (WebClient client = new WebClient())
+                {
+                    NameValueCollection postData = new NameValueCollection()
                     {
-                        MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                        comando.ExecuteNonQuery();
-                        MessageBox.Show("Se ah borrado el producto correctamente.", "Operacion Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-                    catch (MySqlException ex)
+                          { "bd_idProducto", BD_idProveedor.ToString() }
+                   };
+                    string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                    switch (SW_respuesta[0])
                     {
-                        MessageBox.Show("Error al eliminar: " + ex.Message);
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
+                        case '0':
+                            MessageBox.Show("FALLA EN LA OPERACION SQL", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
 
-                     sql = "DELETE FROM producto WHERE numClave='" + AUX_NumCod + "'";
+                        case '2':
+                            MessageBox.Show("EL CODIGO DE PRODUCTO YA EXISTE", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
 
-                     conexionBD = Conexion.conexion();
-                    conexionBD.Open();
+                        case '8':
+                            MessageBox.Show("AUN SE TIENE ESTE PRODUCTO EN EL INVENTARIO", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        case '9':
+                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
 
-                    try
-                    {
-                        MySqlCommand comando = new MySqlCommand(sql, conexionBD);
-                        comando.ExecuteNonQuery();
-                        _limpiarCampos();
+                        default:
+                            MessageBox.Show("SE ELIMINO CORRECTAMENTE EL PRODUCTO", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                    }
+                    _limpiarCampos();
 
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error al eliminar: " + ex.Message);
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
-                    break;
-                
+                 
+
+
+                }
+
+
             }
-            
+            catch
+            {
+                MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
         }
 
         private void Boton_Limpiar_Click(object sender, EventArgs e)
@@ -147,6 +147,11 @@ namespace PROYECTOIS1
             Boton_Limpiar.Enabled = false;
             Boton_Verificar.Enabled = true;
             Input_NumProducto.Enabled = true;
+        }
+
+        private void Eliminar_Productos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

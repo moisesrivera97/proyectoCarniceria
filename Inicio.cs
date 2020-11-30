@@ -101,5 +101,10 @@ namespace PROYECTOIS1
 
             }
         }
+
+        private void Label_Puesto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

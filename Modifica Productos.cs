@@ -49,34 +49,35 @@ namespace PROYECTOIS1
                     {
                           { "bd_idProducto", BD_idProveedor.ToString() }
                    };
+
                     string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
-
-                    if (SW_respuesta[0] == '0')
+                    switch (SW_respuesta[0])
                     {
-                        MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Input_NumProducto.Text = "";
+                        case '0':
+                            MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Input_NumProducto.Text = "";
+                            break;
 
-                    }
-                    else if (SW_respuesta[0] == '9')
-                    {
-                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        case '9':
+                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
 
+                        default:
+                            char SW_delimitador = ',';
+                            string[] SW_campos = SW_respuesta.Split(SW_delimitador);
+                            Input_NomProd.Text = SW_campos[0];
+                            Input_Precio.Text = SW_campos[1];
+                            Input_CodigoProveedor.Text = SW_campos[2];
+                            Input_NomProd.Enabled = true;
+                            Input_Precio.Enabled = true;
+                            Input_CodigoProveedor.Enabled = true;
+                            Boton_Modificar.Enabled = true;
+                            Boton_Limpiar.Enabled = true;
+                            Boton_Verificar.Enabled = false;
+                            Input_NumProducto.Enabled = false;
+                            break;
                     }
-                    else
-                    {
-                        char SW_delimitador = ',';
-                        string[] SW_campos = SW_respuesta.Split(SW_delimitador);
-                        Input_NomProd.Text = SW_campos[0];
-                        Input_Precio.Text = SW_campos[1];
-                        Input_CodigoProveedor.Text = SW_campos[2];
-                        Input_NomProd.Enabled = true;
-                        Input_Precio.Enabled = true;
-                        Input_CodigoProveedor.Enabled = true;
-                        Boton_Modificar.Enabled = true;
-                        Boton_Limpiar.Enabled = true;
-                        Boton_Verificar.Enabled = false;
-                        Input_NumProducto.Enabled = false;
-                    }
+
 
 
                 }
@@ -88,6 +89,7 @@ namespace PROYECTOIS1
                 MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            
         }
 
         private void Boton_Modificar_Click(object sender, EventArgs e)
@@ -118,16 +120,28 @@ namespace PROYECTOIS1
                       { "bd_precio", BD_precio.ToString()  },
                       { "bd_fkProveedor", BD_fkProveedor.ToString() }
                };
-                                string respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
-                                if (respuesta[0]== '8')
+                                string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                                switch (SW_respuesta[0])
                                 {
-                                    MessageBox.Show("ESE PROVEEDOR NO EXISTE", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    case '0':
+                                        MessageBox.Show("NO SE ENCUENTRA NINGUN PROVEEDOR CON ESTE ID", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
 
+                                    case '8':
+                                        MessageBox.Show("ESE PROVEEDOR NO EXISTE", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                                        break;
+                                    case '9':
+                                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+
+                                    default:
+                                        MessageBox.Show("SE MODIFICO CORRECTAMENTE EL PRODUCTO", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        break;
                                 }
-                                else { 
-                                MessageBox.Show(respuesta);
                                 _limpiarCampos();
-                                }
+
+
+                                
                             }
 
                         }
