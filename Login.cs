@@ -17,6 +17,8 @@ namespace PROYECTOIS1
         public Login()
         {
             InitializeComponent();
+
+            this.BackColor = Color.FromArgb(127, 12, 7);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,12 +75,10 @@ namespace PROYECTOIS1
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

@@ -90,6 +90,9 @@
     <Compile Include="Ajustes Administrativos.Designer.cs">
       <DependentUpon>Ajustes Administrativos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Button_WOC.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Eliminar Productos.cs">
       <SubType>Form</SubType>
@@ -158,6 +161,9 @@
     </Compile>
     <Compile Include="Sistema de Inventariado.Designer.cs">
       <DependentUpon>Sistema de Inventariado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxRounded.cs">
+      <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="Actualizar Inventario.resx">
       <DependentUpon>Actualizar Inventario.cs</DependentUpon>
