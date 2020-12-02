@@ -20,11 +20,10 @@ namespace PROYECTOIS1
 
             this.BackColor = Color.FromArgb(127, 12, 7);
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonIngresar_Click(object sender, EventArgs e)
         {
-            string BD_idEmpleado = Input_Usuario.Text;
-            string BD_contrasena = Input_Contraseña.Text;
+            string BD_idEmpleado = textBoxRoundedUser.Text;
+            string BD_contrasena = textBoxRoundedPass.Text;
 
             string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Empleado_Verificar.php";
 
@@ -40,14 +39,14 @@ namespace PROYECTOIS1
                 {
                     case '0':
                         MessageBox.Show("USUARIO O CONTRASEÑA INCORRECTOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Input_Usuario.Text = "";
-                        Input_Contraseña.Text = "";
+                        textBoxRoundedUser.Text = "";
+                        textBoxRoundedPass.Text = "";
                         break;
 
                     case '9':
                         MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Input_Usuario.Text = "";
-                        Input_Contraseña.Text = "";
+                        textBoxRoundedUser.Text = "";
+                        textBoxRoundedPass.Text = "";
                         break;
 
                     default:
@@ -67,18 +66,14 @@ namespace PROYECTOIS1
                         break;
 
                 }
-                
+
 
             }
-            
         }
 
-        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        private void ButtonSalir_Click(object sender, EventArgs e)
         {
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
+            Application.Exit();
         }
     }
 }

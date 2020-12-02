@@ -11,6 +11,8 @@ namespace TextBox3
 {
     class TextBoxRounded : TextBox
     {
+        public Color colorTop { get; set; }
+        public Color colorBottom { get; set; }
         [System.Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -25,7 +27,7 @@ namespace TextBox3
         {
             SolidBrush sb = new SolidBrush(this.ForeColor);
             LinearGradientBrush lb = new LinearGradientBrush(this.ClientRectangle,
-             Color.FromArgb(243, 243, 243), Color.White, LinearGradientMode.Vertical);
+             colorTop, colorBottom, LinearGradientMode.Vertical);
             e.Graphics.FillRectangle(lb, this.ClientRectangle);
             e.Graphics.DrawString(this.Text, this.Font, sb, 0f, 0f);
             sb.Dispose();
