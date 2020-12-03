@@ -42,10 +42,7 @@ namespace PROYECTOIS1
         readonly int CON_TipoAdministrador = 1;
         readonly int CON_TipoInventario = 3;
         readonly int CON_TipoCajero = 2;
-
-     
-
-        private void Boton_PuntoDeVenta_Click(object sender, EventArgs e)
+        private void ButtonVentas_Click(object sender, EventArgs e)
         {
             if (SW_TipoDeUsuario == CON_TipoCajero)
             {
@@ -60,34 +57,7 @@ namespace PROYECTOIS1
             }
         }
 
-       
-
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void Boton_AjustesAdministrativos_Click(object sender, EventArgs e)
-        {
-            if (SW_TipoDeUsuario == CON_TipoAdministrador)
-            {
-                Ajustes_Administrativos AA = new Ajustes_Administrativos();
-                AA.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-        }
-
-        private void Boton_SistemaDeInventario_Click_1(object sender, EventArgs e)
+        private void ButtonInventario_Click(object sender, EventArgs e)
         {
             if (SW_TipoDeUsuario == CON_TipoAdministrador || SW_TipoDeUsuario == CON_TipoInventario)
             {
@@ -102,9 +72,30 @@ namespace PROYECTOIS1
             }
         }
 
-        private void Label_Puesto_Click(object sender, EventArgs e)
+        private void ButtonAjustes_Click(object sender, EventArgs e)
         {
+            if (SW_TipoDeUsuario == CON_TipoAdministrador)
+            {
+                Ajustes_Administrativos AA = new Ajustes_Administrativos();
+                AA.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
+
+        private void Button_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Seguro que desea salir?", "Salir", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }
         }
     }
 }
