@@ -40,6 +40,8 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.labelBienvenido = new System.Windows.Forms.Label();
             this.panelSuperiorAjustes = new System.Windows.Forms.Panel();
+            this.panelSuperiorInventario = new System.Windows.Forms.Panel();
+            this.panelSuperiorVentas = new System.Windows.Forms.Panel();
             this.button_CerrarSesion = new ePOSOne.btnProduct.Button_WOC();
             this.buttonAjustes = new ePOSOne.btnProduct.Button_WOC();
             this.buttonInventario = new ePOSOne.btnProduct.Button_WOC();
@@ -47,10 +49,8 @@
             this.buttonAjustesVentas = new ePOSOne.btnProduct.Button_WOC();
             this.buttonAjustesProveedores = new ePOSOne.btnProduct.Button_WOC();
             this.buttonAjustesProductos = new ePOSOne.btnProduct.Button_WOC();
-            this.panelSuperiorInventario = new System.Windows.Forms.Panel();
-            this.buttonInventarioInventario = new ePOSOne.btnProduct.Button_WOC();
-            this.panelSuperiorVentas = new System.Windows.Forms.Panel();
             this.buttonVentasVentas = new ePOSOne.btnProduct.Button_WOC();
+            this.buttonInventarioInventario = new ePOSOne.btnProduct.Button_WOC();
             this.panelMenuPrincipalIzq.SuspendLayout();
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -134,9 +134,9 @@
             // 
             // panelSuperior
             // 
+            this.panelSuperior.Controls.Add(this.panelSuperiorAjustes);
             this.panelSuperior.Controls.Add(this.panelSuperiorVentas);
             this.panelSuperior.Controls.Add(this.panelSuperiorInventario);
-            this.panelSuperior.Controls.Add(this.panelSuperiorAjustes);
             this.panelSuperior.Controls.Add(this.labelBienvenido);
             this.panelSuperior.Controls.Add(this.labelNombreHeader);
             this.panelSuperior.Controls.Add(this.Label_Puesto);
@@ -178,6 +178,22 @@
             this.panelSuperiorAjustes.Name = "panelSuperiorAjustes";
             this.panelSuperiorAjustes.Size = new System.Drawing.Size(200, 125);
             this.panelSuperiorAjustes.TabIndex = 32;
+            // 
+            // panelSuperiorInventario
+            // 
+            this.panelSuperiorInventario.Controls.Add(this.buttonInventarioInventario);
+            this.panelSuperiorInventario.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorInventario.Name = "panelSuperiorInventario";
+            this.panelSuperiorInventario.Size = new System.Drawing.Size(200, 125);
+            this.panelSuperiorInventario.TabIndex = 32;
+            // 
+            // panelSuperiorVentas
+            // 
+            this.panelSuperiorVentas.Controls.Add(this.buttonVentasVentas);
+            this.panelSuperiorVentas.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorVentas.Name = "panelSuperiorVentas";
+            this.panelSuperiorVentas.Size = new System.Drawing.Size(200, 125);
+            this.panelSuperiorVentas.TabIndex = 33;
             // 
             // button_CerrarSesion
             // 
@@ -297,9 +313,10 @@
             this.buttonAjustesVentas.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAjustesVentas.Size = new System.Drawing.Size(141, 23);
             this.buttonAjustesVentas.TabIndex = 34;
-            this.buttonAjustesVentas.Text = "                               ▶";
+            this.buttonAjustesVentas.Text = "          Ventas        ▶";
             this.buttonAjustesVentas.TextColor = System.Drawing.Color.White;
             this.buttonAjustesVentas.UseVisualStyleBackColor = true;
+            this.buttonAjustesVentas.Click += new System.EventHandler(this.ButtonAjustesVentas_Click);
             // 
             // buttonAjustesProveedores
             // 
@@ -319,9 +336,10 @@
             this.buttonAjustesProveedores.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAjustesProveedores.Size = new System.Drawing.Size(141, 23);
             this.buttonAjustesProveedores.TabIndex = 33;
-            this.buttonAjustesProveedores.Text = "                               ▶";
+            this.buttonAjustesProveedores.Text = "    Proveedores    ▶";
             this.buttonAjustesProveedores.TextColor = System.Drawing.Color.White;
             this.buttonAjustesProveedores.UseVisualStyleBackColor = true;
+            this.buttonAjustesProveedores.Click += new System.EventHandler(this.ButtonAjustesProveedores_Click);
             // 
             // buttonAjustesProductos
             // 
@@ -341,47 +359,10 @@
             this.buttonAjustesProductos.OnHoverTextColor = System.Drawing.Color.White;
             this.buttonAjustesProductos.Size = new System.Drawing.Size(141, 23);
             this.buttonAjustesProductos.TabIndex = 32;
-            this.buttonAjustesProductos.Text = "Productos";
+            this.buttonAjustesProductos.Text = "   Productos";
             this.buttonAjustesProductos.TextColor = System.Drawing.Color.White;
             this.buttonAjustesProductos.UseVisualStyleBackColor = true;
-            // 
-            // panelSuperiorInventario
-            // 
-            this.panelSuperiorInventario.Controls.Add(this.buttonInventarioInventario);
-            this.panelSuperiorInventario.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperiorInventario.Name = "panelSuperiorInventario";
-            this.panelSuperiorInventario.Size = new System.Drawing.Size(200, 125);
-            this.panelSuperiorInventario.TabIndex = 32;
-            // 
-            // buttonInventarioInventario
-            // 
-            this.buttonInventarioInventario.BackColor = System.Drawing.Color.White;
-            this.buttonInventarioInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonInventarioInventario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
-            this.buttonInventarioInventario.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
-            this.buttonInventarioInventario.FlatAppearance.BorderSize = 0;
-            this.buttonInventarioInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.buttonInventarioInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.buttonInventarioInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInventarioInventario.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInventarioInventario.Location = new System.Drawing.Point(-9, 52);
-            this.buttonInventarioInventario.Name = "buttonInventarioInventario";
-            this.buttonInventarioInventario.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
-            this.buttonInventarioInventario.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
-            this.buttonInventarioInventario.OnHoverTextColor = System.Drawing.Color.White;
-            this.buttonInventarioInventario.Size = new System.Drawing.Size(141, 23);
-            this.buttonInventarioInventario.TabIndex = 33;
-            this.buttonInventarioInventario.Text = "Inventario";
-            this.buttonInventarioInventario.TextColor = System.Drawing.Color.White;
-            this.buttonInventarioInventario.UseVisualStyleBackColor = true;
-            // 
-            // panelSuperiorVentas
-            // 
-            this.panelSuperiorVentas.Controls.Add(this.buttonVentasVentas);
-            this.panelSuperiorVentas.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperiorVentas.Name = "panelSuperiorVentas";
-            this.panelSuperiorVentas.Size = new System.Drawing.Size(200, 125);
-            this.panelSuperiorVentas.TabIndex = 33;
+            this.buttonAjustesProductos.Click += new System.EventHandler(this.ButtonAjustesProductos_Click);
             // 
             // buttonVentasVentas
             // 
@@ -404,6 +385,28 @@
             this.buttonVentasVentas.Text = "  Punto De Venta";
             this.buttonVentasVentas.TextColor = System.Drawing.Color.White;
             this.buttonVentasVentas.UseVisualStyleBackColor = true;
+            // 
+            // buttonInventarioInventario
+            // 
+            this.buttonInventarioInventario.BackColor = System.Drawing.Color.White;
+            this.buttonInventarioInventario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonInventarioInventario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.buttonInventarioInventario.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.buttonInventarioInventario.FlatAppearance.BorderSize = 0;
+            this.buttonInventarioInventario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonInventarioInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonInventarioInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInventarioInventario.Font = new System.Drawing.Font("Montserrat", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInventarioInventario.Location = new System.Drawing.Point(-9, 52);
+            this.buttonInventarioInventario.Name = "buttonInventarioInventario";
+            this.buttonInventarioInventario.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.buttonInventarioInventario.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.buttonInventarioInventario.OnHoverTextColor = System.Drawing.Color.White;
+            this.buttonInventarioInventario.Size = new System.Drawing.Size(141, 23);
+            this.buttonInventarioInventario.TabIndex = 33;
+            this.buttonInventarioInventario.Text = "Inventario";
+            this.buttonInventarioInventario.TextColor = System.Drawing.Color.White;
+            this.buttonInventarioInventario.UseVisualStyleBackColor = true;
             // 
             // Inicio
             // 
