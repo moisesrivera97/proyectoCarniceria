@@ -46,10 +46,9 @@
             // Boton_Eliminar
             // 
             this.Boton_Eliminar.Enabled = false;
-            this.Boton_Eliminar.Location = new System.Drawing.Point(92, 384);
-            this.Boton_Eliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Boton_Eliminar.Location = new System.Drawing.Point(69, 312);
             this.Boton_Eliminar.Name = "Boton_Eliminar";
-            this.Boton_Eliminar.Size = new System.Drawing.Size(161, 48);
+            this.Boton_Eliminar.Size = new System.Drawing.Size(121, 39);
             this.Boton_Eliminar.TabIndex = 46;
             this.Boton_Eliminar.Text = "Eliminar";
             this.Boton_Eliminar.UseVisualStyleBackColor = true;
@@ -58,66 +57,59 @@
             // Input_CodigoProveedor
             // 
             this.Input_CodigoProveedor.Enabled = false;
-            this.Input_CodigoProveedor.Location = new System.Drawing.Point(253, 300);
-            this.Input_CodigoProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Input_CodigoProveedor.Location = new System.Drawing.Point(190, 244);
             this.Input_CodigoProveedor.Name = "Input_CodigoProveedor";
-            this.Input_CodigoProveedor.Size = new System.Drawing.Size(129, 22);
+            this.Input_CodigoProveedor.Size = new System.Drawing.Size(98, 20);
             this.Input_CodigoProveedor.TabIndex = 45;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(88, 304);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(66, 247);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 17);
+            this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 44;
             this.label4.Text = "Codigo Del Proveedor";
             // 
             // Input_Precio
             // 
             this.Input_Precio.Enabled = false;
-            this.Input_Precio.Location = new System.Drawing.Point(253, 215);
-            this.Input_Precio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Input_Precio.Location = new System.Drawing.Point(190, 175);
             this.Input_Precio.Name = "Input_Precio";
-            this.Input_Precio.Size = new System.Drawing.Size(129, 22);
+            this.Input_Precio.Size = new System.Drawing.Size(98, 20);
             this.Input_Precio.TabIndex = 43;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(160, 219);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(120, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
+            this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 42;
             this.label3.Text = "Precio (Kg)";
             // 
             // Input_NomProd
             // 
             this.Input_NomProd.Enabled = false;
-            this.Input_NomProd.Location = new System.Drawing.Point(253, 132);
-            this.Input_NomProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Input_NomProd.Location = new System.Drawing.Point(190, 107);
             this.Input_NomProd.Name = "Input_NomProd";
-            this.Input_NomProd.Size = new System.Drawing.Size(335, 22);
+            this.Input_NomProd.Size = new System.Drawing.Size(252, 20);
             this.Input_NomProd.TabIndex = 41;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, 134);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(77, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 17);
+            this.label2.Size = new System.Drawing.Size(109, 13);
             this.label2.TabIndex = 40;
             this.label2.Text = "Nombre Del Producto";
             // 
             // Boton_Verificar
             // 
-            this.Boton_Verificar.Location = new System.Drawing.Point(416, 6);
-            this.Boton_Verificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Boton_Verificar.Location = new System.Drawing.Point(312, 5);
             this.Boton_Verificar.Name = "Boton_Verificar";
-            this.Boton_Verificar.Size = new System.Drawing.Size(173, 47);
+            this.Boton_Verificar.Size = new System.Drawing.Size(130, 38);
             this.Boton_Verificar.TabIndex = 39;
             this.Boton_Verificar.Text = "Verificar";
             this.Boton_Verificar.UseVisualStyleBackColor = true;
@@ -125,39 +117,35 @@
             // 
             // Input_NumProducto
             // 
-            this.Input_NumProducto.Location = new System.Drawing.Point(184, 14);
-            this.Input_NumProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Input_NumProducto.Location = new System.Drawing.Point(138, 11);
             this.Input_NumProducto.Name = "Input_NumProducto";
-            this.Input_NumProducto.Size = new System.Drawing.Size(120, 22);
+            this.Input_NumProducto.Size = new System.Drawing.Size(91, 20);
             this.Input_NumProducto.TabIndex = 38;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(25, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 17);
+            this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 37;
             this.label1.Text = "Numero del Producto";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 61);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(632, 12);
+            this.pictureBox1.Size = new System.Drawing.Size(474, 10);
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
             // Boton_Limpiar
             // 
             this.Boton_Limpiar.Enabled = false;
-            this.Boton_Limpiar.Location = new System.Drawing.Point(395, 384);
-            this.Boton_Limpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Boton_Limpiar.Location = new System.Drawing.Point(296, 312);
             this.Boton_Limpiar.Name = "Boton_Limpiar";
-            this.Boton_Limpiar.Size = new System.Drawing.Size(161, 48);
+            this.Boton_Limpiar.Size = new System.Drawing.Size(121, 39);
             this.Boton_Limpiar.TabIndex = 47;
             this.Boton_Limpiar.Text = "Limpiar";
             this.Boton_Limpiar.UseVisualStyleBackColor = true;
@@ -165,9 +153,9 @@
             // 
             // Eliminar_Productos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 469);
+            this.ClientSize = new System.Drawing.Size(837, 399);
             this.Controls.Add(this.Boton_Limpiar);
             this.Controls.Add(this.Boton_Eliminar);
             this.Controls.Add(this.Input_CodigoProveedor);
@@ -180,7 +168,7 @@
             this.Controls.Add(this.Input_NumProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Eliminar_Productos";
             this.Text = "Eliminar_Productos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Eliminar_Productos_FormClosed);

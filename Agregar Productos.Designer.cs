@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 330);
+            this.ClientSize = new System.Drawing.Size(837, 399);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Input_CodigoProveedor);
             this.Controls.Add(this.label4);
@@ -151,6 +151,7 @@
             this.Controls.Add(this.Input_NumProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar_Productos";
             this.Text = "Agregar_Productos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Agregar_Productos_FormClosed);

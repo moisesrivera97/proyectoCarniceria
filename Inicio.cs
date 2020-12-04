@@ -169,51 +169,46 @@ namespace PROYECTOIS1
         #region Botones del menú principal (botones Ventas, Inventario, Ajustes y Cerrar Sesión) en el menú izquierdo
         private void ButtonVentas_Click(object sender, EventArgs e)
         {
-            if(buttonVentas.ButtonColor != Color.FromArgb(255,255,255))
+            if(SW_TipoDeUsuario == CON_TipoCajero)
             {
-                desactivarBotonesPrincipales();
-                buttonVentas.ButtonColor = Color.FromArgb(255, 255, 255);
-                buttonVentas.TextColor = Color.FromArgb(0, 0, 0);
-
-                mostrarSubmenus(panelSuperiorVentas);
-
-                ocultarOpcionesSubMenus();
-
-                abrirPanelEventos(new Punto_de_Venta());
-                /*
-                if (SW_TipoDeUsuario == CON_TipoCajero)
+                if (buttonVentas.ButtonColor != Color.FromArgb(255, 255, 255))
                 {
+                    desactivarBotonesPrincipales();
+                    buttonVentas.ButtonColor = Color.FromArgb(255, 255, 255);
+                    buttonVentas.TextColor = Color.FromArgb(0, 0, 0);
+
+                    mostrarSubmenus(panelSuperiorVentas);
+
+                    ocultarOpcionesSubMenus();
+
                     abrirPanelEventos(new Punto_de_Venta());
                 }
-                else
-                {
-                    MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }*/
+            }
+            else
+            {
+                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void ButtonInventario_Click(object sender, EventArgs e)
         {
-            if (buttonInventario.ButtonColor != Color.FromArgb(255, 255, 255))
+            if(SW_TipoDeUsuario == CON_TipoAdministrador || SW_TipoDeUsuario == CON_TipoInventario)
             {
-                desactivarBotonesPrincipales();
-                buttonInventario.ButtonColor = Color.FromArgb(255, 255, 255);
-                buttonInventario.TextColor = Color.FromArgb(0, 0, 0);
-                mostrarSubmenus(panelSuperiorInventario);
-
-                ocultarOpcionesSubMenus();
-
-                abrirPanelEventos(new Sistema_de_Inventariado(SW_TipoDeUsuario));
-                /*
-                if (SW_TipoDeUsuario == CON_TipoAdministrador || SW_TipoDeUsuario == CON_TipoInventario)
+                if (buttonInventario.ButtonColor != Color.FromArgb(255, 255, 255))
                 {
+                    desactivarBotonesPrincipales();
+                    buttonInventario.ButtonColor = Color.FromArgb(255, 255, 255);
+                    buttonInventario.TextColor = Color.FromArgb(0, 0, 0);
+                    mostrarSubmenus(panelSuperiorInventario);
+
+                    ocultarOpcionesSubMenus();
+
                     abrirPanelEventos(new Sistema_de_Inventariado(SW_TipoDeUsuario));
                 }
-                else
-                {
-                    MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }*/
+            }
+            else
+            {
+                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

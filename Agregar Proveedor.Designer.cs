@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 309);
+            this.ClientSize = new System.Drawing.Size(837, 399);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Input_Direccion);
             this.Controls.Add(this.label4);
@@ -151,6 +151,7 @@
             this.Controls.Add(this.Input_NumProv);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar_Proveedor";
             this.Text = "Agregar_Proveedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Agregar_Proveedor_FormClosed);

@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 389);
+            this.ClientSize = new System.Drawing.Size(837, 399);
             this.Controls.Add(this.Boton_Limpiar);
             this.Controls.Add(this.Boton_Modificar);
             this.Controls.Add(this.Input_Direccion);
@@ -168,6 +168,7 @@
             this.Controls.Add(this.Input_NumProveedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Modificar_Proveedor";
             this.Text = "Modificar_Proveedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Modificar_Proveedor_FormClosed);
