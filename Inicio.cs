@@ -17,7 +17,7 @@ namespace PROYECTOIS1
 
             InitializeComponent();
             this.SW_TipoDeUsuario = SW_TipoDeUsuario;
-            disenioInicial(SW_TipoDeUsuario);
+            disenioInicial(SW_TipoDeUsuario);            
 
             //Animaciones de de transición de los botones del menú de ajustes
             buttonAjustesVentas.MouseEnter += OnMouseEnterbuttonAjustesVentas;
@@ -60,6 +60,8 @@ namespace PROYECTOIS1
         // Función que carga las opciones iniciales de la applicación (botones activos)
         private void disenioInicial(int usuario)
         {
+            panelSubMenuProductos.Visible = false;
+            panelSubMenuProveedores.Visible = false;
             if(usuario == CON_TipoCajero)
             {
                 buttonVentas.ButtonColor = Color.FromArgb(255,255,255);
@@ -83,6 +85,8 @@ namespace PROYECTOIS1
 
                 panelSuperiorInventario.Visible = false;
                 panelSuperiorVentas.Visible = false;
+
+                panelSubMenuProductos.Visible = true;
             }
         }
         // Función que oculta los páneles del menú superior
@@ -99,6 +103,17 @@ namespace PROYECTOIS1
             if (panelSuperiorVentas.Visible == true)
             {
                 panelSuperiorVentas.Visible = false;
+            }
+        }
+        private void ocultarOpcionesSubMenus()
+        {
+            if(panelSubMenuProductos.Visible == true)
+            {
+                panelSubMenuProductos.Visible = false;
+            }
+            if(panelSubMenuProveedores.Visible == true)
+            {
+                panelSubMenuProveedores.Visible = false;
             }
         }
         // Función que muestra un submenú
@@ -140,6 +155,8 @@ namespace PROYECTOIS1
                 buttonVentas.TextColor = Color.FromArgb(0, 0, 0);
 
                 mostrarSubmenus(panelSuperiorVentas);
+
+                ocultarOpcionesSubMenus();
                 /*
                 if (SW_TipoDeUsuario == CON_TipoCajero)
                 {
@@ -163,6 +180,8 @@ namespace PROYECTOIS1
                 buttonInventario.ButtonColor = Color.FromArgb(255, 255, 255);
                 buttonInventario.TextColor = Color.FromArgb(0, 0, 0);
                 mostrarSubmenus(panelSuperiorInventario);
+
+                ocultarOpcionesSubMenus();
 
                 /*
                 if (SW_TipoDeUsuario == CON_TipoAdministrador || SW_TipoDeUsuario == CON_TipoInventario)
@@ -188,6 +207,27 @@ namespace PROYECTOIS1
                 buttonAjustes.TextColor = Color.FromArgb(0, 0, 0);
 
                 mostrarSubmenus(panelSuperiorAjustes);
+
+                //Mostrar el menú de opciones dependiendo de cual fue el último submenú seleccionado
+                Point pos1 = new Point(-9, 12);
+                Point pos2 = new Point(-9, 52);
+                Point pos3 = new Point(-9, 92);
+
+                if(buttonAjustesProductos.Location == pos1)
+                {
+                    panelSubMenuProveedores.Visible = false;
+                    panelSubMenuProductos.Visible = true;
+                }
+                else if(buttonAjustesProveedores.Location == pos2)
+                {
+                    panelSubMenuProductos.Visible = false;
+                    panelSubMenuProveedores.Visible = true;
+                }
+                else if(buttonAjustesVentas.Location == pos3)
+                {
+                    panelSubMenuProductos.Visible = false;
+                    panelSubMenuProveedores.Visible = false;
+                }
                 /*
                 if (SW_TipoDeUsuario == CON_TipoAdministrador)
                 {
@@ -218,6 +258,7 @@ namespace PROYECTOIS1
         #region Botones del submenú de Ajustes
         private void ButtonAjustesVentas_Click(object sender, EventArgs e)
         {
+            buttonAjustesVentas.BackColor = Color.Transparent;
             // Mostrar boton seleccionado
             buttonAjustesVentas.Location = new Point(-9, 92);
             buttonAjustesVentas.Text = "    Ventas";
@@ -227,9 +268,13 @@ namespace PROYECTOIS1
             buttonAjustesProductos.Text = "   Productos            ▶";
             buttonAjustesProveedores.Location = new Point(-110, 52);
             buttonAjustesProveedores.Text = "    Proveedores    ▶";
+
+            panelSubMenuProveedores.Visible = false;
+            panelSubMenuProductos.Visible = false;
         }
         private void OnMouseEnterbuttonAjustesVentas(object sender, EventArgs e)
         {
+            buttonAjustesVentas.BackColor = Color.Transparent;
             Point posicion = new Point(-110, 92);
             if (buttonAjustesVentas.Location == posicion)
             {
@@ -238,6 +283,7 @@ namespace PROYECTOIS1
         }
         private void OnMouseLeavebuttonAjustesVentas(object sender, EventArgs e)
         {
+            buttonAjustesVentas.BackColor = Color.Transparent;
             Point posicion = new Point(-9, 92);
             if (buttonAjustesVentas.Location == posicion
                 && buttonAjustesVentas.Text == "          Ventas        ▶")
@@ -247,6 +293,7 @@ namespace PROYECTOIS1
         }
         private void ButtonAjustesProveedores_Click(object sender, EventArgs e)
         {
+            buttonAjustesProveedores.BackColor = Color.Transparent;
             //Mostrar botón seleccionado
             buttonAjustesProveedores.Location = new Point(-9, 52);
             buttonAjustesProveedores.Text = "   Proveedores";
@@ -256,9 +303,13 @@ namespace PROYECTOIS1
             buttonAjustesProductos.Text = "   Productos            ▶";
             buttonAjustesVentas.Location = new Point(-110, 92);
             buttonAjustesVentas.Text = "          Ventas        ▶";
+
+            panelSubMenuProveedores.Visible = true;
+            panelSubMenuProductos.Visible = false;
         }
         private void OnMouseEnterbuttonAjustesProveedores(object sender, EventArgs e)
         {
+            buttonAjustesProveedores.BackColor = Color.Transparent;
             Point posicion = new Point(-110, 52);
             if (buttonAjustesProveedores.Location == posicion)
             {
@@ -267,6 +318,7 @@ namespace PROYECTOIS1
         }
         private void OnMouseLeavebuttonAjustesProveedores(object sender, EventArgs e)
         {
+            buttonAjustesProveedores.BackColor = Color.Transparent;
             Point posicion = new Point(-9, 52);
             if (buttonAjustesProveedores.Location == posicion
                 && buttonAjustesProveedores.Text == "    Proveedores    ▶")
@@ -276,6 +328,7 @@ namespace PROYECTOIS1
         }
         private void ButtonAjustesProductos_Click(object sender, EventArgs e)
         {
+            buttonAjustesProductos.BackColor = Color.Transparent;
             //Mostrar botón seleccionado
             buttonAjustesProductos.Location = new Point(-9, 12);
             buttonAjustesProductos.Text = "   Productos";
@@ -285,9 +338,13 @@ namespace PROYECTOIS1
             buttonAjustesProveedores.Text = "    Proveedores    ▶";
             buttonAjustesVentas.Location = new Point(-110, 92);
             buttonAjustesVentas.Text = "          Ventas        ▶";
+
+            panelSubMenuProveedores.Visible = false;
+            panelSubMenuProductos.Visible = true;
         }
         private void OnMouseEnterbuttonAjustesProductos(object sender, EventArgs e)
         {
+            buttonAjustesProductos.BackColor = Color.Transparent;
             Point posicion = new Point(-110, 12);
             if (buttonAjustesProductos.Location == posicion)
             {
@@ -296,6 +353,7 @@ namespace PROYECTOIS1
         }
         private void OnMouseLeavebuttonAjustesProductos(object sender, EventArgs e)
         {
+            buttonAjustesProductos.BackColor = Color.Transparent;
             Point posicion = new Point(-9, 12);
             if (buttonAjustesProductos.Location == posicion
                 && buttonAjustesProductos.Text == "   Productos            ▶")
