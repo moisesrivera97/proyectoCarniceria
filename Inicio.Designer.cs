@@ -60,6 +60,7 @@
             this.buttonAjustesProductos = new ePOSOne.btnProduct.Button_WOC();
             this.buttonVentasVentas = new ePOSOne.btnProduct.Button_WOC();
             this.buttonInventarioInventario = new ePOSOne.btnProduct.Button_WOC();
+            this.panelEventos = new System.Windows.Forms.Panel();
             this.panelMenuPrincipalIzq.SuspendLayout();
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -608,12 +609,21 @@
             this.buttonInventarioInventario.TextColor = System.Drawing.Color.White;
             this.buttonInventarioInventario.UseVisualStyleBackColor = false;
             // 
+            // panelEventos
+            // 
+            this.panelEventos.BackColor = System.Drawing.Color.White;
+            this.panelEventos.Location = new System.Drawing.Point(230, 155);
+            this.panelEventos.Name = "panelEventos";
+            this.panelEventos.Size = new System.Drawing.Size(837, 399);
+            this.panelEventos.TabIndex = 33;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.ControlBox = false;
+            this.Controls.Add(this.panelEventos);
             this.Controls.Add(this.panelSubmenus);
             this.Controls.Add(this.panelMenuPrincipalIzq);
             this.Controls.Add(this.panelSuperior);
@@ -667,5 +677,6 @@
         private ePOSOne.btnProduct.Button_WOC buttonProveedoresEliminar;
         private ePOSOne.btnProduct.Button_WOC buttonProveedoresModificar;
         private ePOSOne.btnProduct.Button_WOC buttonProveedoresAgregar;
+        private System.Windows.Forms.Panel panelEventos;
     }
 }

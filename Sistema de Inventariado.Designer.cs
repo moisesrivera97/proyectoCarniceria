@@ -37,17 +37,14 @@
             this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Proveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Segundero = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Boton_ActualizarInventario
             // 
-            this.Boton_ActualizarInventario.Location = new System.Drawing.Point(368, 490);
-            this.Boton_ActualizarInventario.Margin = new System.Windows.Forms.Padding(4);
+            this.Boton_ActualizarInventario.Location = new System.Drawing.Point(67, 234);
             this.Boton_ActualizarInventario.Name = "Boton_ActualizarInventario";
-            this.Boton_ActualizarInventario.Size = new System.Drawing.Size(312, 46);
+            this.Boton_ActualizarInventario.Size = new System.Drawing.Size(234, 37);
             this.Boton_ActualizarInventario.TabIndex = 8;
             this.Boton_ActualizarInventario.Text = "Actualizar Inventario";
             this.Boton_ActualizarInventario.UseVisualStyleBackColor = true;
@@ -62,10 +59,9 @@
             this.Precio,
             this.Proveedor});
             this.Tabla_Productos.HideSelection = false;
-            this.Tabla_Productos.Location = new System.Drawing.Point(31, 119);
-            this.Tabla_Productos.Margin = new System.Windows.Forms.Padding(4);
+            this.Tabla_Productos.Location = new System.Drawing.Point(23, 97);
             this.Tabla_Productos.Name = "Tabla_Productos";
-            this.Tabla_Productos.Size = new System.Drawing.Size(1007, 331);
+            this.Tabla_Productos.Size = new System.Drawing.Size(278, 112);
             this.Tabla_Productos.TabIndex = 7;
             this.Tabla_Productos.UseCompatibleStateImageBehavior = false;
             this.Tabla_Productos.View = System.Windows.Forms.View.Details;
@@ -100,22 +96,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(381, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(88, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 46);
+            this.label1.Size = new System.Drawing.Size(213, 37);
             this.label1.TabIndex = 6;
             this.label1.Text = "INVENTARIO";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 82);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1071, 6);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // Segundero
             // 
@@ -125,18 +110,16 @@
             // 
             // Sistema_de_Inventariado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(837, 399);
             this.Controls.Add(this.Boton_ActualizarInventario);
             this.Controls.Add(this.Tabla_Productos);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sistema_de_Inventariado";
             this.Text = "Sistema_de_Inventariado";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Sistema_de_Inventariado_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,7 +135,6 @@
         private System.Windows.Forms.ColumnHeader Precio;
         private System.Windows.Forms.ColumnHeader Proveedor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer Segundero;
     }
 }

@@ -69,6 +69,8 @@ namespace PROYECTOIS1
 
                 panelSuperiorAjustes.Visible = false;
                 panelSuperiorInventario.Visible = false;
+
+                abrirPanelEventos(new Punto_de_Venta());
             }
             else if(usuario == CON_TipoInventario)
             {
@@ -77,6 +79,8 @@ namespace PROYECTOIS1
 
                 panelSuperiorAjustes.Visible = false;
                 panelSuperiorVentas.Visible = false;
+
+                abrirPanelEventos(new Sistema_de_Inventariado(SW_TipoDeUsuario));
             }
             else if(usuario == CON_TipoAdministrador)
             {
@@ -143,6 +147,23 @@ namespace PROYECTOIS1
             buttonAjustes.TextColor = Color.FromArgb(255, 255, 255);
             buttonAjustes.ButtonColor = Color.FromArgb(127, 12, 7);
         }
+        //Función que abre en la parte central la información requerida dependiendo del botón seleccionado
+        private Form activeForm = null;
+        private void abrirPanelEventos(Form childForm)
+        {
+            if(activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelEventos.Controls.Add(childForm);
+            panelEventos.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         #endregion
 
         #region Botones del menú principal (botones Ventas, Inventario, Ajustes y Cerrar Sesión) en el menú izquierdo
@@ -157,12 +178,12 @@ namespace PROYECTOIS1
                 mostrarSubmenus(panelSuperiorVentas);
 
                 ocultarOpcionesSubMenus();
+
+                abrirPanelEventos(new Punto_de_Venta());
                 /*
                 if (SW_TipoDeUsuario == CON_TipoCajero)
                 {
-                    Punto_de_Venta Pv = new Punto_de_Venta();
-                    Pv.Show();
-                    this.Close();
+                    abrirPanelEventos(new Punto_de_Venta());
                 }
                 else
                 {
@@ -183,17 +204,15 @@ namespace PROYECTOIS1
 
                 ocultarOpcionesSubMenus();
 
+                abrirPanelEventos(new Sistema_de_Inventariado(SW_TipoDeUsuario));
                 /*
                 if (SW_TipoDeUsuario == CON_TipoAdministrador || SW_TipoDeUsuario == CON_TipoInventario)
                 {
-                    Sistema_de_Inventariado SI = new Sistema_de_Inventariado(SW_TipoDeUsuario);
-                    SI.Show();
-                    this.Close();
+                    abrirPanelEventos(new Sistema_de_Inventariado(SW_TipoDeUsuario));
                 }
                 else
                 {
                     MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }*/
             }
         }
