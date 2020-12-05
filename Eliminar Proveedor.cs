@@ -18,13 +18,27 @@ namespace PROYECTOIS1
         public Eliminar_Proveedor()
         {
             InitializeComponent();
+            buttonLimpiar.Enabled = false;
+            buttonModificar.Enabled = false;
+        }
+        private void _limpiarCampos()
+        {
+            textBoxCodigoProveedor.Text = "";
+            textBoxNombreProveedor.Text = "";
+            textBoxTelefono.Text = "";
+            textBoxDireccion.Text = "";
+
+            buttonModificar.Enabled = false;
+            buttonLimpiar.Enabled = false;
+            buttonVerificar.Enabled = true;
+            textBoxCodigoProveedor.Enabled = true;
         }
 
-        private void Boton_Verificar_Click(object sender, EventArgs e)
+        private void ButtonVerificar_Click(object sender, EventArgs e)
         {
             try
             {
-                int BD_idProveedor = int.Parse(Input_NumProv.Text);
+                int BD_idProveedor = int.Parse(textBoxCodigoProveedor.Text);
                 string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Verificar.php";
 
                 using (WebClient client = new WebClient())
@@ -49,17 +63,17 @@ namespace PROYECTOIS1
                         default:
                             char SW_delimitador = ',';
                             string[] SW_campos = SW_respuesta.Split(SW_delimitador);
-                            Input_NomProv.Text = SW_campos[0];
-                            Input_Telefono.Text = SW_campos[1];
-                            Input_Direccion.Text = SW_campos[2];
-                            Boton_Eliminar.Enabled = true;
-                            Boton_Limpiar.Enabled = true;
-                            Boton_Verificar.Enabled = false;
-                            Input_NumProv.Enabled = false; break;
+                            textBoxNombreProveedor.Text = SW_campos[0];
+                            textBoxTelefono.Text = SW_campos[1];
+                            textBoxDireccion.Text = SW_campos[2];
+                            buttonModificar.Enabled = true;
+                            buttonLimpiar.Enabled = true;
+                            buttonVerificar.Enabled = false;
+                            textBoxCodigoProveedor.Enabled = false; break;
                     }
-                  
 
-                        
+
+
                 }
 
 
@@ -71,26 +85,26 @@ namespace PROYECTOIS1
             }
         }
 
-        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        private void ButtonLimpiar_Click(object sender, EventArgs e)
         {
             _limpiarCampos();
         }
 
-        private void Boton_Eliminar_Click(object sender, EventArgs e)
+        private void ButtonModificar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deceas borrar el proveedor \"" + Input_NomProv.Text + "\".",
-                         "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Deceas borrar el proveedor \"" + textBoxNombreProveedor.Text + "\".",
+             "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             switch (dr)
             {
                 case DialogResult.Yes:
-                    
-                        int AUX_NumCod = int.Parse(Input_NumProv.Text);
-                        int BD_idProveedor = int.Parse(Input_NumProv.Text);
-                        string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Eliminar.php";
 
-                        using (WebClient client = new WebClient())
-                        {
-                            NameValueCollection postData = new NameValueCollection()
+                    int AUX_NumCod = int.Parse(textBoxCodigoProveedor.Text);
+                    int BD_idProveedor = int.Parse(textBoxCodigoProveedor.Text);
+                    string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Eliminar.php";
+
+                    using (WebClient client = new WebClient())
+                    {
+                        NameValueCollection postData = new NameValueCollection()
                     {
                           { "bd_idProveedor", BD_idProveedor.ToString() }
                    };
@@ -114,27 +128,9 @@ namespace PROYECTOIS1
                                 break;
                         }
                         _limpiarCampos();
-                      
-
-                        }
-                    
+                    }
                     break;
-
             }
         }
-        private void _limpiarCampos()
-        {
-            Input_NumProv.Text = "";
-            Input_NomProv.Text = "";
-            Input_Telefono.Text = "";
-            Input_Direccion.Text = "";
-
-            Boton_Eliminar.Enabled = false;
-            Boton_Limpiar.Enabled = false;
-            Boton_Verificar.Enabled = true;
-            Input_NumProv.Enabled = true;
-        }
-
-      
     }
 }

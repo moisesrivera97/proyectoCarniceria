@@ -19,15 +19,22 @@ namespace PROYECTOIS1
         {
             InitializeComponent();
         }
+        private void _limpiarCampos()
+        {
+            textBoxClaveProveedor.Text = "";
+            textBoxNombreProveedor.Text = "";
+            textBoxTelefono.Text = "";
+            textBoxDireccion.Text = "";
+        }
 
-        private void Boton_Verificar_Click(object sender, EventArgs e)
+        private void ButtonAgregar_Click(object sender, EventArgs e)
         {
             try
             {
-                int BD_idProveedor = int.Parse(Input_NumProv.Text);
-                string BD_nombre = Input_NomProv.Text.ToUpper();
-                string BD_direccion = Input_Direccion.Text.ToUpper();
-                long BD_telefono = long.Parse(Input_Telefono.Text);
+                int BD_idProveedor = int.Parse(textBoxClaveProveedor.Text);
+                string BD_nombre = textBoxNombreProveedor.Text.ToUpper();
+                string BD_direccion = textBoxDireccion.Text.ToUpper();
+                long BD_telefono = long.Parse(textBoxTelefono.Text);
 
                 if (BD_idProveedor > 0 && BD_nombre.Length > 0 && BD_direccion.Length > 0 && BD_telefono > 0)
                 {
@@ -37,7 +44,7 @@ namespace PROYECTOIS1
                     {
                         NameValueCollection postData = new NameValueCollection()
                 {
-                      { "bd_idProveedor", BD_idProveedor.ToString() },  
+                      { "bd_idProveedor", BD_idProveedor.ToString() },
                       { "bd_nombre", BD_nombre },
                       { "bd_telefono", BD_telefono.ToString()  },
                       { "bd_direccion", BD_direccion }
@@ -76,15 +83,6 @@ namespace PROYECTOIS1
                 MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-        }
-        private void _limpiarCampos()
-        {
-            Input_NumProv.Text = "";
-            Input_NomProv.Text = "";
-            Input_Telefono.Text = "";
-            Input_Direccion.Text = "";
-
-
         }
     }
 }

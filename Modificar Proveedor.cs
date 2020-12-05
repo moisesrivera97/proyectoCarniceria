@@ -18,13 +18,30 @@ namespace PROYECTOIS1
         public Modificar_Proveedor()
         {
             InitializeComponent();
+            buttonLimpiar.Enabled = false;
+            buttonModificar.Enabled = false;
+        }
+        private void _limpiarCampos()
+        {
+            textBoxCodigoProveedor.Text = "";
+            textBoxNombreProveedor.Text = "";
+            textBoxTelefono.Text = "";
+            textBoxDireccion.Text = "";
+
+            buttonModificar.Enabled = false;
+            buttonLimpiar.Enabled = false;
+            buttonVerificar.Enabled = true;
+            textBoxCodigoProveedor.Enabled = true;
+            textBoxNombreProveedor.Enabled = false;
+            textBoxTelefono.Enabled = false;
+            textBoxDireccion.Enabled = false;
         }
 
-        private void Boton_Verificar_Click(object sender, EventArgs e)
+        private void ButtonVerificar_Click(object sender, EventArgs e)
         {
             try
             {
-                int BD_idProveedor = int.Parse(Input_NumProveedor.Text);
+                int BD_idProveedor = int.Parse(textBoxCodigoProveedor.Text);
                 string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Proveedor_Verificar.php";
 
                 using (WebClient client = new WebClient())
@@ -49,20 +66,20 @@ namespace PROYECTOIS1
 
                             char SW_delimitador = ',';
                             string[] SW_campos = SW_respuesta.Split(SW_delimitador);
-                            Input_NomProv.Text = SW_campos[0];
-                            Input_Telefono.Text = SW_campos[1];
-                            Input_Direccion.Text = SW_campos[2];
-                            Input_NumProveedor.Enabled = false;
-                            Input_NomProv.Enabled = true;
-                            Input_Direccion.Enabled = true;
-                            Input_Telefono.Enabled = true;
-                            Boton_Modificar.Enabled = true;
-                            Boton_Limpiar.Enabled = true;
-                            Boton_Verificar.Enabled = false;
-                            Input_NumProveedor.Enabled = false; 
+                            textBoxNombreProveedor.Text = SW_campos[0];
+                            textBoxTelefono.Text = SW_campos[1];
+                            textBoxDireccion.Text = SW_campos[2];
+                            textBoxCodigoProveedor.Enabled = false;
+                            textBoxNombreProveedor.Enabled = true;
+                            textBoxDireccion.Enabled = true;
+                            textBoxTelefono.Enabled = true;
+                            buttonModificar.Enabled = true;
+                            buttonLimpiar.Enabled = true;
+                            buttonVerificar.Enabled = false;
+                            textBoxCodigoProveedor.Enabled = false;
                             break;
                     }
-                    
+
 
 
                 }
@@ -76,25 +93,25 @@ namespace PROYECTOIS1
             }
         }
 
-        private void Boton_Limpiar_Click(object sender, EventArgs e)
+        private void ButtonLimpiar_Click(object sender, EventArgs e)
         {
             _limpiarCampos();
         }
 
-        private void Boton_Modificar_Click(object sender, EventArgs e)
+        private void ButtonModificar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deceas modificar el proveedor \"" + Input_NomProv.Text + "\".",
-                         "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Deceas modificar el proveedor \"" + textBoxNombreProveedor.Text + "\".",
+             "ADVERTENCIA", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             switch (dr)
             {
                 case DialogResult.Yes:
 
                     try
                     {
-                        int BD_idProveedor = int.Parse(Input_NumProveedor.Text);
-                        string BD_nombre = Input_NomProv.Text.ToUpper();
-                        string BD_direccion = Input_Direccion.Text.ToUpper();
-                        long BD_telefono = long.Parse(Input_Telefono.Text);
+                        int BD_idProveedor = int.Parse(textBoxCodigoProveedor.Text);
+                        string BD_nombre = textBoxNombreProveedor.Text.ToUpper();
+                        string BD_direccion = textBoxDireccion.Text.ToUpper();
+                        long BD_telefono = long.Parse(textBoxTelefono.Text);
 
                         if (BD_idProveedor > 0 && BD_nombre.Length > 0 && BD_direccion.Length > 0 && BD_telefono > 0)
                         {
@@ -116,7 +133,7 @@ namespace PROYECTOIS1
                                         MessageBox.Show("FALLA EN LA SENTENCAI SQL ", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         break;
 
-                                   
+
                                     case '9':
                                         MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         break;
@@ -140,27 +157,8 @@ namespace PROYECTOIS1
                         MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo", "ERROR #:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
-
                     break;
-
             }
-        }
-        private void _limpiarCampos()
-        {
-            Input_NumProveedor.Text = "";
-            Input_NomProv.Text = "";
-            Input_Telefono.Text = "";
-            Input_Direccion.Text = "";
-
-            Boton_Modificar.Enabled = false;
-            Boton_Limpiar.Enabled = false;
-            Boton_Verificar.Enabled = true;
-            Input_NumProveedor.Enabled = true;
-            Input_NomProv.Enabled = false;
-            Input_Telefono.Enabled = false;
-            Input_Direccion.Enabled = false;
-
-
         }
     }
 }
