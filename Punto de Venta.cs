@@ -146,18 +146,6 @@ namespace PROYECTOIS1
 
 
         }
-
-
-
-
-
-
-        private void Punto_de_Venta_FormClosed_1(object sender, FormClosedEventArgs e)
-        {
-            Inicio In = new Inicio(2);
-            In.Show();
-        }
-
         private void Input_CodProducto_KeyPress_1(object sender, KeyPressEventArgs e)
 
         {

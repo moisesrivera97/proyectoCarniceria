@@ -77,13 +77,6 @@ namespace PROYECTOIS1
 
             }
         }
-
-        private void Agregar_Proveedor_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Menu_Proveedores Mn = new Menu_Proveedores();
-            Mn.Show();
-        }
-
         private void _limpiarCampos()
         {
             Input_NumProv.Text = "";

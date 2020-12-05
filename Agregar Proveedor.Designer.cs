@@ -154,7 +154,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar_Proveedor";
             this.Text = "Agregar_Proveedor";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Agregar_Proveedor_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

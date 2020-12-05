@@ -72,12 +72,6 @@ namespace PROYECTOIS1
             }
 
         }
-
-        private void Agregar_Productos_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Menu_Productos Mn = new Menu_Productos();
-            Mn.Show();
-        }
         private void _limpiarCampos()
         {
             Input_NomProd.Text = "";

@@ -19,13 +19,6 @@ namespace PROYECTOIS1
         {
             InitializeComponent();
         }
-
-        private void Eliminar_Productos_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Menu_Productos AA = new Menu_Productos();
-            AA.Show();
-        }
-
         private void Boton_Verificar_Click(object sender, EventArgs e)
         {
             try
@@ -147,11 +140,6 @@ namespace PROYECTOIS1
             Boton_Limpiar.Enabled = false;
             Boton_Verificar.Enabled = true;
             Input_NumProducto.Enabled = true;
-        }
-
-        private void Eliminar_Productos_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

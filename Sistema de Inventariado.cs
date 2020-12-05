@@ -25,23 +25,12 @@ namespace PROYECTOIS1
         readonly int SW_TipoUsuario;
         readonly int CON_TipoInventario = 3;
 
-     
-
-        private void Sistema_de_Inventariado_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            {
-                Inicio In = new Inicio(SW_TipoUsuario);
-                In.Show();
-            }
-        }
-
         private void Boton_ActualizarInventario_Click(object sender, EventArgs e)
         {
             if (SW_TipoUsuario == CON_TipoInventario)
             {
                 Actualizar_Inventario AI = new Actualizar_Inventario();
                 AI.Show();
-                this.Hide();
             }
             else
             {
@@ -90,17 +79,9 @@ namespace PROYECTOIS1
             catch { 
             }
         }
-
-     
-
         private void Segundero_Tick(object sender, EventArgs e)
         {
             _ActualizarTabla();
-        }
-
-        private void Tabla_Productos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

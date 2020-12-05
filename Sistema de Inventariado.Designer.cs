@@ -65,7 +65,6 @@
             this.Tabla_Productos.TabIndex = 7;
             this.Tabla_Productos.UseCompatibleStateImageBehavior = false;
             this.Tabla_Productos.View = System.Windows.Forms.View.Details;
-            this.Tabla_Productos.SelectedIndexChanged += new System.EventHandler(this.Tabla_Productos_SelectedIndexChanged);
             // 
             // Cod_Prod
             // 
@@ -119,7 +118,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sistema_de_Inventariado";
             this.Text = "Sistema_de_Inventariado";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Sistema_de_Inventariado_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -171,7 +171,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Modificar_Proveedor";
             this.Text = "Modificar_Proveedor";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Modificar_Proveedor_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

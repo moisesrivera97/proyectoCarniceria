@@ -20,10 +20,6 @@ namespace PROYECTOIS1
         {
             InitializeComponent();
         }
-
-
-      
-
         private void Boton_Actualizar_Click(object sender, EventArgs e)
         {
             {
@@ -63,8 +59,7 @@ namespace PROYECTOIS1
             }//ACTUALIZACION DE PRODUCTO
             
 
-}
-
+        }
 
         private void _limpiarCampos()
         {
@@ -72,14 +67,5 @@ namespace PROYECTOIS1
             Input_NumProd.Text = "";
            
         }
-
-
-        private void Actualizar_Inventario_FormClosed_1(object sender, FormClosedEventArgs e)
-        {
-            Sistema_de_Inventariado AA = new Sistema_de_Inventariado(3);
-            AA.Show();
-        }
-
-
     }
 }

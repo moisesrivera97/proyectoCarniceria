@@ -36,40 +36,40 @@
             this.labelAreaHeader = new System.Windows.Forms.Label();
             this.labelNombreHeader = new System.Windows.Forms.Label();
             this.panelMenuPrincipalIzq = new System.Windows.Forms.Panel();
-            this.panelSuperior = new System.Windows.Forms.Panel();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.labelBienvenido = new System.Windows.Forms.Label();
-            this.panelSuperiorAjustes = new System.Windows.Forms.Panel();
-            this.panelSuperiorInventario = new System.Windows.Forms.Panel();
-            this.panelSuperiorVentas = new System.Windows.Forms.Panel();
-            this.panelSubmenus = new System.Windows.Forms.Panel();
-            this.panelSubMenuProductos = new System.Windows.Forms.Panel();
-            this.panelSubMenuProveedores = new System.Windows.Forms.Panel();
-            this.buttonProveedoresEliminar = new ePOSOne.btnProduct.Button_WOC();
-            this.buttonProveedoresModificar = new ePOSOne.btnProduct.Button_WOC();
-            this.buttonProveedoresAgregar = new ePOSOne.btnProduct.Button_WOC();
-            this.buttonProductosEliminar = new ePOSOne.btnProduct.Button_WOC();
-            this.buttonProductosModificar = new ePOSOne.btnProduct.Button_WOC();
-            this.buttonProductosVer = new ePOSOne.btnProduct.Button_WOC();
             this.button_CerrarSesion = new ePOSOne.btnProduct.Button_WOC();
             this.buttonAjustes = new ePOSOne.btnProduct.Button_WOC();
             this.buttonInventario = new ePOSOne.btnProduct.Button_WOC();
             this.buttonVentas = new ePOSOne.btnProduct.Button_WOC();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.panelSuperior = new System.Windows.Forms.Panel();
+            this.panelSuperiorAjustes = new System.Windows.Forms.Panel();
             this.buttonAjustesVentas = new ePOSOne.btnProduct.Button_WOC();
             this.buttonAjustesProveedores = new ePOSOne.btnProduct.Button_WOC();
             this.buttonAjustesProductos = new ePOSOne.btnProduct.Button_WOC();
+            this.panelSuperiorVentas = new System.Windows.Forms.Panel();
             this.buttonVentasVentas = new ePOSOne.btnProduct.Button_WOC();
+            this.panelSuperiorInventario = new System.Windows.Forms.Panel();
             this.buttonInventarioInventario = new ePOSOne.btnProduct.Button_WOC();
+            this.labelBienvenido = new System.Windows.Forms.Label();
+            this.panelSubmenus = new System.Windows.Forms.Panel();
+            this.panelSubMenuProveedores = new System.Windows.Forms.Panel();
+            this.buttonProveedoresEliminar = new ePOSOne.btnProduct.Button_WOC();
+            this.buttonProveedoresModificar = new ePOSOne.btnProduct.Button_WOC();
+            this.buttonProveedoresAgregar = new ePOSOne.btnProduct.Button_WOC();
+            this.panelSubMenuProductos = new System.Windows.Forms.Panel();
+            this.buttonProductosEliminar = new ePOSOne.btnProduct.Button_WOC();
+            this.buttonProductosModificar = new ePOSOne.btnProduct.Button_WOC();
+            this.buttonProductosVer = new ePOSOne.btnProduct.Button_WOC();
             this.panelEventos = new System.Windows.Forms.Panel();
             this.panelMenuPrincipalIzq.SuspendLayout();
-            this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            this.panelSuperior.SuspendLayout();
             this.panelSuperiorAjustes.SuspendLayout();
-            this.panelSuperiorInventario.SuspendLayout();
             this.panelSuperiorVentas.SuspendLayout();
+            this.panelSuperiorInventario.SuspendLayout();
             this.panelSubmenus.SuspendLayout();
-            this.panelSubMenuProductos.SuspendLayout();
             this.panelSubMenuProveedores.SuspendLayout();
+            this.panelSubMenuProductos.SuspendLayout();
             this.SuspendLayout();
             // 
             // Label_Puesto
@@ -150,251 +150,6 @@
             this.panelMenuPrincipalIzq.Name = "panelMenuPrincipalIzq";
             this.panelMenuPrincipalIzq.Size = new System.Drawing.Size(230, 554);
             this.panelMenuPrincipalIzq.TabIndex = 30;
-            // 
-            // panelSuperior
-            // 
-            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.panelSuperior.Controls.Add(this.panelSuperiorAjustes);
-            this.panelSuperior.Controls.Add(this.panelSuperiorVentas);
-            this.panelSuperior.Controls.Add(this.panelSuperiorInventario);
-            this.panelSuperior.Controls.Add(this.labelBienvenido);
-            this.panelSuperior.Controls.Add(this.labelNombreHeader);
-            this.panelSuperior.Controls.Add(this.Label_Puesto);
-            this.panelSuperior.Controls.Add(this.Label_NombreDelUsuario);
-            this.panelSuperior.Controls.Add(this.labelPuestoHeader);
-            this.panelSuperior.Controls.Add(this.Label_Area);
-            this.panelSuperior.Controls.Add(this.labelAreaHeader);
-            this.panelSuperior.Location = new System.Drawing.Point(230, 0);
-            this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(837, 125);
-            this.panelSuperior.TabIndex = 31;
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(42, 37);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(143, 70);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 31;
-            this.pictureBoxLogo.TabStop = false;
-            // 
-            // labelBienvenido
-            // 
-            this.labelBienvenido.AutoSize = true;
-            this.labelBienvenido.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBienvenido.ForeColor = System.Drawing.Color.White;
-            this.labelBienvenido.Location = new System.Drawing.Point(521, 9);
-            this.labelBienvenido.Name = "labelBienvenido";
-            this.labelBienvenido.Size = new System.Drawing.Size(92, 18);
-            this.labelBienvenido.TabIndex = 26;
-            this.labelBienvenido.Text = "Bienvenido!";
-            // 
-            // panelSuperiorAjustes
-            // 
-            this.panelSuperiorAjustes.Controls.Add(this.buttonAjustesVentas);
-            this.panelSuperiorAjustes.Controls.Add(this.buttonAjustesProveedores);
-            this.panelSuperiorAjustes.Controls.Add(this.buttonAjustesProductos);
-            this.panelSuperiorAjustes.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperiorAjustes.Name = "panelSuperiorAjustes";
-            this.panelSuperiorAjustes.Size = new System.Drawing.Size(200, 125);
-            this.panelSuperiorAjustes.TabIndex = 32;
-            // 
-            // panelSuperiorInventario
-            // 
-            this.panelSuperiorInventario.Controls.Add(this.buttonInventarioInventario);
-            this.panelSuperiorInventario.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperiorInventario.Name = "panelSuperiorInventario";
-            this.panelSuperiorInventario.Size = new System.Drawing.Size(200, 125);
-            this.panelSuperiorInventario.TabIndex = 32;
-            // 
-            // panelSuperiorVentas
-            // 
-            this.panelSuperiorVentas.Controls.Add(this.buttonVentasVentas);
-            this.panelSuperiorVentas.Location = new System.Drawing.Point(0, 0);
-            this.panelSuperiorVentas.Name = "panelSuperiorVentas";
-            this.panelSuperiorVentas.Size = new System.Drawing.Size(200, 125);
-            this.panelSuperiorVentas.TabIndex = 33;
-            // 
-            // panelSubmenus
-            // 
-            this.panelSubmenus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.panelSubmenus.Controls.Add(this.panelSubMenuProveedores);
-            this.panelSubmenus.Controls.Add(this.panelSubMenuProductos);
-            this.panelSubmenus.Location = new System.Drawing.Point(230, 125);
-            this.panelSubmenus.Name = "panelSubmenus";
-            this.panelSubmenus.Size = new System.Drawing.Size(837, 30);
-            this.panelSubmenus.TabIndex = 32;
-            // 
-            // panelSubMenuProductos
-            // 
-            this.panelSubMenuProductos.Controls.Add(this.buttonProductosEliminar);
-            this.panelSubMenuProductos.Controls.Add(this.buttonProductosModificar);
-            this.panelSubMenuProductos.Controls.Add(this.buttonProductosVer);
-            this.panelSubMenuProductos.Location = new System.Drawing.Point(0, 0);
-            this.panelSubMenuProductos.Name = "panelSubMenuProductos";
-            this.panelSubMenuProductos.Size = new System.Drawing.Size(837, 30);
-            this.panelSubMenuProductos.TabIndex = 33;
-            // 
-            // panelSubMenuProveedores
-            // 
-            this.panelSubMenuProveedores.Controls.Add(this.buttonProveedoresEliminar);
-            this.panelSubMenuProveedores.Controls.Add(this.buttonProveedoresModificar);
-            this.panelSubMenuProveedores.Controls.Add(this.buttonProveedoresAgregar);
-            this.panelSubMenuProveedores.Location = new System.Drawing.Point(0, 0);
-            this.panelSubMenuProveedores.Name = "panelSubMenuProveedores";
-            this.panelSubMenuProveedores.Size = new System.Drawing.Size(837, 30);
-            this.panelSubMenuProveedores.TabIndex = 36;
-            // 
-            // buttonProveedoresEliminar
-            // 
-            this.buttonProveedoresEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProveedoresEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProveedoresEliminar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProveedoresEliminar.FlatAppearance.BorderSize = 0;
-            this.buttonProveedoresEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProveedoresEliminar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProveedoresEliminar.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresEliminar.Location = new System.Drawing.Point(541, 0);
-            this.buttonProveedoresEliminar.Name = "buttonProveedoresEliminar";
-            this.buttonProveedoresEliminar.OnHoverBorderColor = System.Drawing.Color.White;
-            this.buttonProveedoresEliminar.OnHoverButtonColor = System.Drawing.Color.White;
-            this.buttonProveedoresEliminar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.buttonProveedoresEliminar.Size = new System.Drawing.Size(160, 30);
-            this.buttonProveedoresEliminar.TabIndex = 35;
-            this.buttonProveedoresEliminar.Text = "           Eliminar";
-            this.buttonProveedoresEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProveedoresEliminar.TextColor = System.Drawing.Color.White;
-            this.buttonProveedoresEliminar.UseVisualStyleBackColor = false;
-            // 
-            // buttonProveedoresModificar
-            // 
-            this.buttonProveedoresModificar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProveedoresModificar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProveedoresModificar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProveedoresModificar.FlatAppearance.BorderSize = 0;
-            this.buttonProveedoresModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProveedoresModificar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProveedoresModificar.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresModificar.Location = new System.Drawing.Point(330, 0);
-            this.buttonProveedoresModificar.Name = "buttonProveedoresModificar";
-            this.buttonProveedoresModificar.OnHoverBorderColor = System.Drawing.Color.White;
-            this.buttonProveedoresModificar.OnHoverButtonColor = System.Drawing.Color.White;
-            this.buttonProveedoresModificar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.buttonProveedoresModificar.Size = new System.Drawing.Size(160, 30);
-            this.buttonProveedoresModificar.TabIndex = 34;
-            this.buttonProveedoresModificar.Text = "           Modificar";
-            this.buttonProveedoresModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProveedoresModificar.TextColor = System.Drawing.Color.White;
-            this.buttonProveedoresModificar.UseVisualStyleBackColor = false;
-            // 
-            // buttonProveedoresAgregar
-            // 
-            this.buttonProveedoresAgregar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProveedoresAgregar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProveedoresAgregar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProveedoresAgregar.FlatAppearance.BorderSize = 0;
-            this.buttonProveedoresAgregar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProveedoresAgregar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProveedoresAgregar.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonProveedoresAgregar.Location = new System.Drawing.Point(117, 0);
-            this.buttonProveedoresAgregar.Name = "buttonProveedoresAgregar";
-            this.buttonProveedoresAgregar.OnHoverBorderColor = System.Drawing.Color.White;
-            this.buttonProveedoresAgregar.OnHoverButtonColor = System.Drawing.Color.White;
-            this.buttonProveedoresAgregar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.buttonProveedoresAgregar.Size = new System.Drawing.Size(160, 30);
-            this.buttonProveedoresAgregar.TabIndex = 33;
-            this.buttonProveedoresAgregar.Text = "           Agregar";
-            this.buttonProveedoresAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProveedoresAgregar.TextColor = System.Drawing.Color.White;
-            this.buttonProveedoresAgregar.UseVisualStyleBackColor = false;
-            // 
-            // buttonProductosEliminar
-            // 
-            this.buttonProductosEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProductosEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProductosEliminar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProductosEliminar.FlatAppearance.BorderSize = 0;
-            this.buttonProductosEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProductosEliminar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProductosEliminar.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonProductosEliminar.Location = new System.Drawing.Point(541, 0);
-            this.buttonProductosEliminar.Name = "buttonProductosEliminar";
-            this.buttonProductosEliminar.OnHoverBorderColor = System.Drawing.Color.White;
-            this.buttonProductosEliminar.OnHoverButtonColor = System.Drawing.Color.White;
-            this.buttonProductosEliminar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.buttonProductosEliminar.Size = new System.Drawing.Size(160, 30);
-            this.buttonProductosEliminar.TabIndex = 35;
-            this.buttonProductosEliminar.Text = "           Eliminar";
-            this.buttonProductosEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProductosEliminar.TextColor = System.Drawing.Color.White;
-            this.buttonProductosEliminar.UseVisualStyleBackColor = false;
-            // 
-            // buttonProductosModificar
-            // 
-            this.buttonProductosModificar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProductosModificar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProductosModificar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProductosModificar.FlatAppearance.BorderSize = 0;
-            this.buttonProductosModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProductosModificar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProductosModificar.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonProductosModificar.Location = new System.Drawing.Point(330, 0);
-            this.buttonProductosModificar.Name = "buttonProductosModificar";
-            this.buttonProductosModificar.OnHoverBorderColor = System.Drawing.Color.White;
-            this.buttonProductosModificar.OnHoverButtonColor = System.Drawing.Color.White;
-            this.buttonProductosModificar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.buttonProductosModificar.Size = new System.Drawing.Size(160, 30);
-            this.buttonProductosModificar.TabIndex = 34;
-            this.buttonProductosModificar.Text = "           Modificar";
-            this.buttonProductosModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProductosModificar.TextColor = System.Drawing.Color.White;
-            this.buttonProductosModificar.UseVisualStyleBackColor = false;
-            // 
-            // buttonProductosVer
-            // 
-            this.buttonProductosVer.BackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonProductosVer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProductosVer.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
-            this.buttonProductosVer.FlatAppearance.BorderSize = 0;
-            this.buttonProductosVer.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosVer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.buttonProductosVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProductosVer.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProductosVer.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonProductosVer.Location = new System.Drawing.Point(117, 0);
-            this.buttonProductosVer.Name = "buttonProductosVer";
-            this.buttonProductosVer.OnHoverBorderColor = System.Drawing.Color.White;
-            this.buttonProductosVer.OnHoverButtonColor = System.Drawing.Color.White;
-            this.buttonProductosVer.OnHoverTextColor = System.Drawing.Color.Black;
-            this.buttonProductosVer.Size = new System.Drawing.Size(160, 30);
-            this.buttonProductosVer.TabIndex = 33;
-            this.buttonProductosVer.Text = "           Agregar";
-            this.buttonProductosVer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonProductosVer.TextColor = System.Drawing.Color.White;
-            this.buttonProductosVer.UseVisualStyleBackColor = false;
             // 
             // button_CerrarSesion
             // 
@@ -496,6 +251,44 @@
             this.buttonVentas.UseVisualStyleBackColor = true;
             this.buttonVentas.Click += new System.EventHandler(this.ButtonVentas_Click);
             // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(42, 37);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(143, 70);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 31;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // panelSuperior
+            // 
+            this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.panelSuperior.Controls.Add(this.panelSuperiorAjustes);
+            this.panelSuperior.Controls.Add(this.panelSuperiorVentas);
+            this.panelSuperior.Controls.Add(this.panelSuperiorInventario);
+            this.panelSuperior.Controls.Add(this.labelBienvenido);
+            this.panelSuperior.Controls.Add(this.labelNombreHeader);
+            this.panelSuperior.Controls.Add(this.Label_Puesto);
+            this.panelSuperior.Controls.Add(this.Label_NombreDelUsuario);
+            this.panelSuperior.Controls.Add(this.labelPuestoHeader);
+            this.panelSuperior.Controls.Add(this.Label_Area);
+            this.panelSuperior.Controls.Add(this.labelAreaHeader);
+            this.panelSuperior.Location = new System.Drawing.Point(230, 0);
+            this.panelSuperior.Name = "panelSuperior";
+            this.panelSuperior.Size = new System.Drawing.Size(837, 125);
+            this.panelSuperior.TabIndex = 31;
+            // 
+            // panelSuperiorAjustes
+            // 
+            this.panelSuperiorAjustes.Controls.Add(this.buttonAjustesVentas);
+            this.panelSuperiorAjustes.Controls.Add(this.buttonAjustesProveedores);
+            this.panelSuperiorAjustes.Controls.Add(this.buttonAjustesProductos);
+            this.panelSuperiorAjustes.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorAjustes.Name = "panelSuperiorAjustes";
+            this.panelSuperiorAjustes.Size = new System.Drawing.Size(200, 125);
+            this.panelSuperiorAjustes.TabIndex = 32;
+            // 
             // buttonAjustesVentas
             // 
             this.buttonAjustesVentas.BackColor = System.Drawing.Color.Transparent;
@@ -565,6 +358,14 @@
             this.buttonAjustesProductos.UseVisualStyleBackColor = false;
             this.buttonAjustesProductos.Click += new System.EventHandler(this.ButtonAjustesProductos_Click);
             // 
+            // panelSuperiorVentas
+            // 
+            this.panelSuperiorVentas.Controls.Add(this.buttonVentasVentas);
+            this.panelSuperiorVentas.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorVentas.Name = "panelSuperiorVentas";
+            this.panelSuperiorVentas.Size = new System.Drawing.Size(200, 125);
+            this.panelSuperiorVentas.TabIndex = 33;
+            // 
             // buttonVentasVentas
             // 
             this.buttonVentasVentas.BackColor = System.Drawing.Color.Transparent;
@@ -587,6 +388,14 @@
             this.buttonVentasVentas.TextColor = System.Drawing.Color.White;
             this.buttonVentasVentas.UseVisualStyleBackColor = false;
             // 
+            // panelSuperiorInventario
+            // 
+            this.panelSuperiorInventario.Controls.Add(this.buttonInventarioInventario);
+            this.panelSuperiorInventario.Location = new System.Drawing.Point(0, 0);
+            this.panelSuperiorInventario.Name = "panelSuperiorInventario";
+            this.panelSuperiorInventario.Size = new System.Drawing.Size(200, 125);
+            this.panelSuperiorInventario.TabIndex = 32;
+            // 
             // buttonInventarioInventario
             // 
             this.buttonInventarioInventario.BackColor = System.Drawing.Color.Transparent;
@@ -608,6 +417,203 @@
             this.buttonInventarioInventario.Text = "Inventario";
             this.buttonInventarioInventario.TextColor = System.Drawing.Color.White;
             this.buttonInventarioInventario.UseVisualStyleBackColor = false;
+            // 
+            // labelBienvenido
+            // 
+            this.labelBienvenido.AutoSize = true;
+            this.labelBienvenido.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBienvenido.ForeColor = System.Drawing.Color.White;
+            this.labelBienvenido.Location = new System.Drawing.Point(521, 9);
+            this.labelBienvenido.Name = "labelBienvenido";
+            this.labelBienvenido.Size = new System.Drawing.Size(92, 18);
+            this.labelBienvenido.TabIndex = 26;
+            this.labelBienvenido.Text = "Bienvenido!";
+            // 
+            // panelSubmenus
+            // 
+            this.panelSubmenus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.panelSubmenus.Controls.Add(this.panelSubMenuProductos);
+            this.panelSubmenus.Controls.Add(this.panelSubMenuProveedores);
+            this.panelSubmenus.Location = new System.Drawing.Point(230, 125);
+            this.panelSubmenus.Name = "panelSubmenus";
+            this.panelSubmenus.Size = new System.Drawing.Size(837, 30);
+            this.panelSubmenus.TabIndex = 32;
+            // 
+            // panelSubMenuProveedores
+            // 
+            this.panelSubMenuProveedores.Controls.Add(this.buttonProveedoresEliminar);
+            this.panelSubMenuProveedores.Controls.Add(this.buttonProveedoresModificar);
+            this.panelSubMenuProveedores.Controls.Add(this.buttonProveedoresAgregar);
+            this.panelSubMenuProveedores.Location = new System.Drawing.Point(0, 0);
+            this.panelSubMenuProveedores.Name = "panelSubMenuProveedores";
+            this.panelSubMenuProveedores.Size = new System.Drawing.Size(837, 30);
+            this.panelSubMenuProveedores.TabIndex = 36;
+            // 
+            // buttonProveedoresEliminar
+            // 
+            this.buttonProveedoresEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProveedoresEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProveedoresEliminar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProveedoresEliminar.FlatAppearance.BorderSize = 0;
+            this.buttonProveedoresEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProveedoresEliminar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProveedoresEliminar.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresEliminar.Location = new System.Drawing.Point(541, 0);
+            this.buttonProveedoresEliminar.Name = "buttonProveedoresEliminar";
+            this.buttonProveedoresEliminar.OnHoverBorderColor = System.Drawing.Color.White;
+            this.buttonProveedoresEliminar.OnHoverButtonColor = System.Drawing.Color.White;
+            this.buttonProveedoresEliminar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonProveedoresEliminar.Size = new System.Drawing.Size(160, 30);
+            this.buttonProveedoresEliminar.TabIndex = 35;
+            this.buttonProveedoresEliminar.Text = "           Eliminar";
+            this.buttonProveedoresEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProveedoresEliminar.TextColor = System.Drawing.Color.White;
+            this.buttonProveedoresEliminar.UseVisualStyleBackColor = false;
+            this.buttonProveedoresEliminar.Click += new System.EventHandler(this.ButtonProveedoresEliminar_Click);
+            // 
+            // buttonProveedoresModificar
+            // 
+            this.buttonProveedoresModificar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProveedoresModificar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProveedoresModificar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProveedoresModificar.FlatAppearance.BorderSize = 0;
+            this.buttonProveedoresModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProveedoresModificar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProveedoresModificar.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresModificar.Location = new System.Drawing.Point(330, 0);
+            this.buttonProveedoresModificar.Name = "buttonProveedoresModificar";
+            this.buttonProveedoresModificar.OnHoverBorderColor = System.Drawing.Color.White;
+            this.buttonProveedoresModificar.OnHoverButtonColor = System.Drawing.Color.White;
+            this.buttonProveedoresModificar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonProveedoresModificar.Size = new System.Drawing.Size(160, 30);
+            this.buttonProveedoresModificar.TabIndex = 34;
+            this.buttonProveedoresModificar.Text = "           Modificar";
+            this.buttonProveedoresModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProveedoresModificar.TextColor = System.Drawing.Color.White;
+            this.buttonProveedoresModificar.UseVisualStyleBackColor = false;
+            this.buttonProveedoresModificar.Click += new System.EventHandler(this.ButtonProveedoresModificar_Click);
+            // 
+            // buttonProveedoresAgregar
+            // 
+            this.buttonProveedoresAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProveedoresAgregar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProveedoresAgregar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProveedoresAgregar.FlatAppearance.BorderSize = 0;
+            this.buttonProveedoresAgregar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProveedoresAgregar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProveedoresAgregar.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonProveedoresAgregar.Location = new System.Drawing.Point(117, 0);
+            this.buttonProveedoresAgregar.Name = "buttonProveedoresAgregar";
+            this.buttonProveedoresAgregar.OnHoverBorderColor = System.Drawing.Color.White;
+            this.buttonProveedoresAgregar.OnHoverButtonColor = System.Drawing.Color.White;
+            this.buttonProveedoresAgregar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonProveedoresAgregar.Size = new System.Drawing.Size(160, 30);
+            this.buttonProveedoresAgregar.TabIndex = 33;
+            this.buttonProveedoresAgregar.Text = "           Agregar";
+            this.buttonProveedoresAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProveedoresAgregar.TextColor = System.Drawing.Color.White;
+            this.buttonProveedoresAgregar.UseVisualStyleBackColor = false;
+            this.buttonProveedoresAgregar.Click += new System.EventHandler(this.ButtonProveedoresAgregar_Click);
+            // 
+            // panelSubMenuProductos
+            // 
+            this.panelSubMenuProductos.Controls.Add(this.buttonProductosEliminar);
+            this.panelSubMenuProductos.Controls.Add(this.buttonProductosModificar);
+            this.panelSubMenuProductos.Controls.Add(this.buttonProductosVer);
+            this.panelSubMenuProductos.Location = new System.Drawing.Point(0, 0);
+            this.panelSubMenuProductos.Name = "panelSubMenuProductos";
+            this.panelSubMenuProductos.Size = new System.Drawing.Size(837, 30);
+            this.panelSubMenuProductos.TabIndex = 33;
+            // 
+            // buttonProductosEliminar
+            // 
+            this.buttonProductosEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProductosEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProductosEliminar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProductosEliminar.FlatAppearance.BorderSize = 0;
+            this.buttonProductosEliminar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProductosEliminar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProductosEliminar.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonProductosEliminar.Location = new System.Drawing.Point(541, 0);
+            this.buttonProductosEliminar.Name = "buttonProductosEliminar";
+            this.buttonProductosEliminar.OnHoverBorderColor = System.Drawing.Color.White;
+            this.buttonProductosEliminar.OnHoverButtonColor = System.Drawing.Color.White;
+            this.buttonProductosEliminar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonProductosEliminar.Size = new System.Drawing.Size(160, 30);
+            this.buttonProductosEliminar.TabIndex = 35;
+            this.buttonProductosEliminar.Text = "           Eliminar";
+            this.buttonProductosEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProductosEliminar.TextColor = System.Drawing.Color.White;
+            this.buttonProductosEliminar.UseVisualStyleBackColor = false;
+            this.buttonProductosEliminar.Click += new System.EventHandler(this.ButtonProductosEliminar_Click);
+            // 
+            // buttonProductosModificar
+            // 
+            this.buttonProductosModificar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProductosModificar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProductosModificar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProductosModificar.FlatAppearance.BorderSize = 0;
+            this.buttonProductosModificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProductosModificar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProductosModificar.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonProductosModificar.Location = new System.Drawing.Point(330, 0);
+            this.buttonProductosModificar.Name = "buttonProductosModificar";
+            this.buttonProductosModificar.OnHoverBorderColor = System.Drawing.Color.White;
+            this.buttonProductosModificar.OnHoverButtonColor = System.Drawing.Color.White;
+            this.buttonProductosModificar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonProductosModificar.Size = new System.Drawing.Size(160, 30);
+            this.buttonProductosModificar.TabIndex = 34;
+            this.buttonProductosModificar.Text = "           Modificar";
+            this.buttonProductosModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProductosModificar.TextColor = System.Drawing.Color.White;
+            this.buttonProductosModificar.UseVisualStyleBackColor = false;
+            this.buttonProductosModificar.Click += new System.EventHandler(this.ButtonProductosModificar_Click);
+            // 
+            // buttonProductosVer
+            // 
+            this.buttonProductosVer.BackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonProductosVer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProductosVer.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(85)))), ((int)(((byte)(26)))));
+            this.buttonProductosVer.FlatAppearance.BorderSize = 0;
+            this.buttonProductosVer.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosVer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosVer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonProductosVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProductosVer.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProductosVer.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonProductosVer.Location = new System.Drawing.Point(117, 0);
+            this.buttonProductosVer.Name = "buttonProductosVer";
+            this.buttonProductosVer.OnHoverBorderColor = System.Drawing.Color.White;
+            this.buttonProductosVer.OnHoverButtonColor = System.Drawing.Color.White;
+            this.buttonProductosVer.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonProductosVer.Size = new System.Drawing.Size(160, 30);
+            this.buttonProductosVer.TabIndex = 33;
+            this.buttonProductosVer.Text = "           Agregar";
+            this.buttonProductosVer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonProductosVer.TextColor = System.Drawing.Color.White;
+            this.buttonProductosVer.UseVisualStyleBackColor = false;
+            this.buttonProductosVer.Click += new System.EventHandler(this.ButtonProductosVer_Click);
             // 
             // panelEventos
             // 
@@ -632,15 +638,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
             this.panelMenuPrincipalIzq.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelSuperior.ResumeLayout(false);
             this.panelSuperior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelSuperiorAjustes.ResumeLayout(false);
-            this.panelSuperiorInventario.ResumeLayout(false);
             this.panelSuperiorVentas.ResumeLayout(false);
+            this.panelSuperiorInventario.ResumeLayout(false);
             this.panelSubmenus.ResumeLayout(false);
-            this.panelSubMenuProductos.ResumeLayout(false);
             this.panelSubMenuProveedores.ResumeLayout(false);
+            this.panelSubMenuProductos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

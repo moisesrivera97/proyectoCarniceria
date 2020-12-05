@@ -62,6 +62,12 @@ namespace PROYECTOIS1
         {
             panelSubMenuProductos.Visible = false;
             panelSubMenuProveedores.Visible = false;
+
+            buttonProductosVer.TextColor = Color.FromArgb(0,0,0);
+            buttonProductosVer.ButtonColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresAgregar.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProveedoresAgregar.ButtonColor = Color.FromArgb(255, 255, 255);
+
             if(usuario == CON_TipoCajero)
             {
                 buttonVentas.ButtonColor = Color.FromArgb(255,255,255);
@@ -91,6 +97,7 @@ namespace PROYECTOIS1
                 panelSuperiorVentas.Visible = false;
 
                 panelSubMenuProductos.Visible = true;
+                abrirPanelEventos(new Agregar_Productos());
             }
         }
         // Función que oculta los páneles del menú superior
@@ -214,46 +221,57 @@ namespace PROYECTOIS1
 
         private void ButtonAjustes_Click(object sender, EventArgs e)
         {
-            if (buttonAjustes.ButtonColor != Color.FromArgb(255, 255, 255))
+            if (SW_TipoDeUsuario == CON_TipoAdministrador)
             {
-                desactivarBotonesPrincipales();
-                buttonAjustes.ButtonColor = Color.FromArgb(255, 255, 255);
-                buttonAjustes.TextColor = Color.FromArgb(0, 0, 0);
+                if (buttonAjustes.ButtonColor != Color.FromArgb(255, 255, 255))
+                {
+                    desactivarBotonesPrincipales();
+                    buttonAjustes.ButtonColor = Color.FromArgb(255, 255, 255);
+                    buttonAjustes.TextColor = Color.FromArgb(0, 0, 0);
 
-                mostrarSubmenus(panelSuperiorAjustes);
+                    mostrarSubmenus(panelSuperiorAjustes);
 
-                //Mostrar el menú de opciones dependiendo de cual fue el último submenú seleccionado
-                Point pos1 = new Point(-9, 12);
-                Point pos2 = new Point(-9, 52);
-                Point pos3 = new Point(-9, 92);
+                    //Mostrar el menú de opciones dependiendo de cual fue el último submenú seleccionado
+                    Point pos1 = new Point(-9, 12);
+                    Point pos2 = new Point(-9, 52);
+                    Point pos3 = new Point(-9, 92);
 
-                if(buttonAjustesProductos.Location == pos1)
-                {
-                    panelSubMenuProveedores.Visible = false;
-                    panelSubMenuProductos.Visible = true;
-                }
-                else if(buttonAjustesProveedores.Location == pos2)
-                {
-                    panelSubMenuProductos.Visible = false;
-                    panelSubMenuProveedores.Visible = true;
-                }
-                else if(buttonAjustesVentas.Location == pos3)
-                {
-                    panelSubMenuProductos.Visible = false;
-                    panelSubMenuProveedores.Visible = false;
-                }
-                /*
-                if (SW_TipoDeUsuario == CON_TipoAdministrador)
-                {
-                    Ajustes_Administrativos AA = new Ajustes_Administrativos();
-                    AA.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (buttonAjustesProductos.Location == pos1)
+                    {
+                        panelSubMenuProveedores.Visible = false;
+                        panelSubMenuProductos.Visible = true;
 
-                }*/
+                        if (buttonProductosVer.ButtonColor == Color.FromArgb(255, 255, 255))
+                            abrirPanelEventos(new Agregar_Productos());
+                        else if (buttonProductosModificar.ButtonColor == Color.FromArgb(255, 255, 255))
+                            abrirPanelEventos(new Modifica_Productos());
+                        else if (buttonProductosEliminar.ButtonColor == Color.FromArgb(255, 255, 255))
+                            abrirPanelEventos(new Eliminar_Productos());
+                    }
+                    else if (buttonAjustesProveedores.Location == pos2)
+                    {
+                        panelSubMenuProductos.Visible = false;
+                        panelSubMenuProveedores.Visible = true;
+
+                        if (buttonProveedoresAgregar.ButtonColor == Color.FromArgb(255, 255, 255))
+                            abrirPanelEventos(new Agregar_Proveedor());
+                        else if (buttonProveedoresModificar.ButtonColor == Color.FromArgb(255, 255, 255))
+                            abrirPanelEventos(new Modificar_Proveedor());
+                        else if (buttonProveedoresEliminar.ButtonColor == Color.FromArgb(255, 255, 255))
+                            abrirPanelEventos(new Eliminar_Proveedor());
+                    }
+                    else if (buttonAjustesVentas.Location == pos3)
+                    {
+                        panelSubMenuProductos.Visible = false;
+                        panelSubMenuProveedores.Visible = false;
+
+                        abrirPanelEventos(new Menu_Ventas());
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -285,6 +303,8 @@ namespace PROYECTOIS1
 
             panelSubMenuProveedores.Visible = false;
             panelSubMenuProductos.Visible = false;
+
+            abrirPanelEventos(new Menu_Ventas());
         }
         private void OnMouseEnterbuttonAjustesVentas(object sender, EventArgs e)
         {
@@ -320,6 +340,13 @@ namespace PROYECTOIS1
 
             panelSubMenuProveedores.Visible = true;
             panelSubMenuProductos.Visible = false;
+
+            if (buttonProveedoresAgregar.ButtonColor == Color.FromArgb(255, 255, 255))
+                abrirPanelEventos(new Agregar_Proveedor());
+            else if (buttonProveedoresModificar.ButtonColor == Color.FromArgb(255, 255, 255))
+                abrirPanelEventos(new Modificar_Proveedor());
+            else if (buttonProveedoresEliminar.ButtonColor == Color.FromArgb(255, 255, 255))
+                abrirPanelEventos(new Eliminar_Proveedor());
         }
         private void OnMouseEnterbuttonAjustesProveedores(object sender, EventArgs e)
         {
@@ -355,6 +382,13 @@ namespace PROYECTOIS1
 
             panelSubMenuProveedores.Visible = false;
             panelSubMenuProductos.Visible = true;
+
+            if (buttonProductosVer.ButtonColor == Color.FromArgb(255, 255, 255))
+                abrirPanelEventos(new Agregar_Productos());
+            else if (buttonProductosModificar.ButtonColor == Color.FromArgb(255, 255, 255))
+                abrirPanelEventos(new Modifica_Productos());
+            else if (buttonProductosEliminar.ButtonColor == Color.FromArgb(255, 255, 255))
+                abrirPanelEventos(new Eliminar_Productos());
         }
         private void OnMouseEnterbuttonAjustesProductos(object sender, EventArgs e)
         {
@@ -374,6 +408,101 @@ namespace PROYECTOIS1
             {
                 buttonAjustesProductos.Location = new Point(-110, 12);
             }
+        }
+        #endregion
+
+        #region Opciones de la sección de proveedores
+        private void ButtonProveedoresAgregar_Click(object sender, EventArgs e)
+        {
+            //Cambiar color de botón seleccionado al color de selección
+            buttonProveedoresAgregar.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProveedoresAgregar.ButtonColor = Color.FromArgb(255, 255, 255);
+
+            //Cambiar el color de los demás botones del menú al color de deseleccionar
+            buttonProveedoresModificar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresModificar.ButtonColor = Color.FromArgb(31, 85, 26);
+            buttonProveedoresEliminar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresEliminar.ButtonColor = Color.FromArgb(31, 85, 26);
+
+            abrirPanelEventos(new Agregar_Proveedor());
+        }
+
+        private void ButtonProveedoresModificar_Click(object sender, EventArgs e)
+        {
+            //Cambiar color de botón seleccionado al color de selección
+            buttonProveedoresModificar.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProveedoresModificar.ButtonColor = Color.FromArgb(255, 255, 255);
+
+            //Cambiar el color de los demás botones del menú al color de deseleccionar
+            buttonProveedoresAgregar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresAgregar.ButtonColor = Color.FromArgb(31, 85, 26);
+            buttonProveedoresEliminar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresEliminar.ButtonColor = Color.FromArgb(31, 85, 26);
+
+            abrirPanelEventos(new Modificar_Proveedor());
+        }
+
+        private void ButtonProveedoresEliminar_Click(object sender, EventArgs e)
+        {
+            //Cambiar color de botón seleccionado al color de selección
+            buttonProveedoresEliminar.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProveedoresEliminar.ButtonColor = Color.FromArgb(255, 255, 255);
+
+            //Cambiar el color de los demás botones del menú al color de deseleccionar
+            buttonProveedoresAgregar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresAgregar.ButtonColor = Color.FromArgb(31, 85, 26);
+            buttonProveedoresModificar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProveedoresModificar.ButtonColor = Color.FromArgb(31, 85, 26);
+
+            abrirPanelEventos(new Eliminar_Proveedor());
+        }
+        #endregion
+
+        #region Opciones de la Sección de productos
+        private void ButtonProductosVer_Click(object sender, EventArgs e)
+        {
+            //Cambiar color de botón seleccionado al color de selección
+            buttonProductosVer.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProductosVer.ButtonColor = Color.FromArgb(255,255,255);
+
+            //Cambiar el color de los demás botones del menú al color de deseleccionar
+            buttonProductosModificar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProductosModificar.ButtonColor = Color.FromArgb(31, 85, 26);
+            buttonProductosEliminar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProductosEliminar.ButtonColor = Color.FromArgb(31, 85, 26);
+
+            abrirPanelEventos(new Agregar_Productos());
+
+        }
+
+        private void ButtonProductosModificar_Click(object sender, EventArgs e)
+        {
+            //Cambiar color de botón seleccionado al color de selección
+            buttonProductosModificar.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProductosModificar.ButtonColor = Color.FromArgb(255, 255, 255);
+
+            //Cambiar el color de los demás botones del menú al color de deseleccionar
+            buttonProductosVer.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProductosVer.ButtonColor = Color.FromArgb(31, 85, 26);
+            buttonProductosEliminar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProductosEliminar.ButtonColor = Color.FromArgb(31, 85, 26);
+
+            abrirPanelEventos(new Modifica_Productos());
+        }
+
+        private void ButtonProductosEliminar_Click(object sender, EventArgs e)
+        {
+            //Cambiar color de botón seleccionado al color de selección
+            buttonProductosEliminar.TextColor = Color.FromArgb(0, 0, 0);
+            buttonProductosEliminar.ButtonColor = Color.FromArgb(255, 255, 255);
+
+            //Cambiar el color de los demás botones del menú al color de deseleccionar
+            buttonProductosVer.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProductosVer.ButtonColor = Color.FromArgb(31, 85, 26);
+            buttonProductosModificar.TextColor = Color.FromArgb(255, 255, 255);
+            buttonProductosModificar.ButtonColor = Color.FromArgb(31, 85, 26);
+
+            abrirPanelEventos(new Eliminar_Productos());
         }
         #endregion
     }

@@ -171,8 +171,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Eliminar_Productos";
             this.Text = "Eliminar_Productos";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Eliminar_Productos_FormClosed);
-            this.Load += new System.EventHandler(this.Eliminar_Productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

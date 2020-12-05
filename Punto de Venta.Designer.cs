@@ -280,7 +280,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Punto_de_Venta";
             this.Text = "Punto_de_Venta";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Punto_de_Venta_FormClosed_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

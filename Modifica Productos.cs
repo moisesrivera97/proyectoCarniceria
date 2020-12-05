@@ -20,22 +20,6 @@ namespace PROYECTOIS1
         {
             InitializeComponent();
         }
-
-      
-
-    
-
-        private void Modifica_Productos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Modifica_Productos_FormClosed_1(object sender, FormClosedEventArgs e)
-        {
-            Menu_Productos AA = new Menu_Productos();
-            AA.Show();
-        }
-
         private void Boton_Verificar_Click_1(object sender, EventArgs e)
         {
             try

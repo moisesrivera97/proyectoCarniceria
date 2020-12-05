@@ -26,11 +26,6 @@ namespace PROYECTOIS1
             Tabla_ProdcutosDeVenta.Columns.Add("Precio del Producto", 120);
         }
 
-        private void Menu_Ventas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Boton_Buscar_Click(object sender, EventArgs e)
         {
             
