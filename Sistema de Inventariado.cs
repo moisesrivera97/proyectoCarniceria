@@ -24,21 +24,6 @@ namespace PROYECTOIS1
 
         readonly int SW_TipoUsuario;
         readonly int CON_TipoInventario = 3;
-
-        private void Boton_ActualizarInventario_Click(object sender, EventArgs e)
-        {
-            if (SW_TipoUsuario == CON_TipoInventario)
-            {
-                Actualizar_Inventario AI = new Actualizar_Inventario();
-                AI.Show();
-            }
-            else
-            {
-                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-        }
         private void _ActualizarTabla()
         {
             try
@@ -82,6 +67,20 @@ namespace PROYECTOIS1
         private void Segundero_Tick(object sender, EventArgs e)
         {
             _ActualizarTabla();
+        }
+
+        private void ButtonActualizar_Click(object sender, EventArgs e)
+        {
+            if (SW_TipoUsuario == CON_TipoInventario)
+            {
+                Actualizar_Inventario AI = new Actualizar_Inventario();
+                AI.Show();
+            }
+            else
+            {
+                MessageBox.Show("El tipo de Usuario NO tiene autorizacion para realizar esta accion.", "ERROR #2:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

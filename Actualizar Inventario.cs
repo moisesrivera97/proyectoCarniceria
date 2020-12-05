@@ -20,7 +20,12 @@ namespace PROYECTOIS1
         {
             InitializeComponent();
         }
-        private void Boton_Actualizar_Click(object sender, EventArgs e)
+        private void _limpiarCampos()
+        {
+            textBoxKilos.Text = "";
+            textBoxNumeroProducto.Text = "";
+        }
+        private void ButtonActualizar_Click(object sender, EventArgs e)
         {
             {
                 string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Inventario_Actualizar.php";
@@ -29,15 +34,15 @@ namespace PROYECTOIS1
                 {
                     NameValueCollection postData = new NameValueCollection()
                     {
-                          { "bd_fkProducto", Input_NumProd.Text},
-                          { "bd_peso", Input_CantidadKg.Text}
+                          { "bd_fkProducto", textBoxNumeroProducto.Text},
+                          { "bd_peso", textBoxKilos.Text}
                    };
                     string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
                     switch (SW_respuesta[0])
                     {
                         case '0':
-                            MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + Input_NumProd.Text, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Input_NumProd.Text = "";
+                            MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + textBoxNumeroProducto.Text, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            textBoxNumeroProducto.Text = "";
                             break;
                         case '8':
                             MessageBox.Show("No se tiene tanta cantidad de este producto como para quitar la cantidad que ingresaste.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -50,22 +55,13 @@ namespace PROYECTOIS1
 
                         default:
                             MessageBox.Show("Correcto");
-                            
+
                             break;
                     }
                     _limpiarCampos();
 
                 }
             }//ACTUALIZACION DE PRODUCTO
-            
-
-        }
-
-        private void _limpiarCampos()
-        {
-            Input_CantidadKg.Text = "";
-            Input_NumProd.Text = "";
-           
         }
     }
 }
