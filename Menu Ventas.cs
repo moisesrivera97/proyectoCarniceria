@@ -25,58 +25,52 @@ namespace PROYECTOIS1
             Tabla_ProdcutosDeVenta.Columns.Add("Precio (Kilo)", 120);
             Tabla_ProdcutosDeVenta.Columns.Add("Precio del Producto", 120);
         }
-
-        private void Boton_Buscar_Click(object sender, EventArgs e)
+        private void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            
-                int SW_numeroVenta = int.Parse(Input_NumeroVenta.Text);
+            int SW_numeroVenta = int.Parse(textBoxNumeroVenta.Text);
 
-                string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Venta_Buscar.php";
+            string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Venta_Buscar.php";
 
-                using (WebClient client = new WebClient())
-                {
-                    NameValueCollection postData = new NameValueCollection()
+            using (WebClient client = new WebClient())
+            {
+                NameValueCollection postData = new NameValueCollection()
                     {
 
                             { "bd_fkVenta", SW_numeroVenta.ToString() },
                     };
 
-                    string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
-                    switch (SW_respuesta[0])
-                    {
-                        case '0':
-                            MessageBox.Show("NO SE ENCUENTRA NINGUNA VENTA CON ESTE CODIGO", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
+                string SW_respuesta = Encoding.UTF8.GetString(client.UploadValues(urlAddress, postData));
+                switch (SW_respuesta[0])
+                {
+                    case '0':
+                        MessageBox.Show("NO SE ENCUENTRA NINGUNA VENTA CON ESTE CODIGO", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
 
-                        case '9':
-                            MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
+                    case '9':
+                        MessageBox.Show("NO SE PUDO ESTABLECER CONEXION CON LA BASE DE DATOS", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
 
-                        default:
-                            double venta=0;
-                            string[] arreglo = SW_respuesta.Split('|');
+                    default:
+                        double venta = 0;
+                        string[] arreglo = SW_respuesta.Split('|');
 
 
-                            for (int i = 0; i < arreglo.Length-1; i++)
-                            {
+                        for (int i = 0; i < arreglo.Length - 1; i++)
+                        {
 
-                                string[] arr = arreglo[i].Split(',');
-                                ListViewItem itm;
+                            string[] arr = arreglo[i].Split(',');
+                            ListViewItem itm;
 
-                                itm = new ListViewItem(arr);
-                                Tabla_ProdcutosDeVenta.Items.Add(itm);
+                            itm = new ListViewItem(arr);
+                            Tabla_ProdcutosDeVenta.Items.Add(itm);
                             venta += double.Parse(arr[4]);
-                                
 
-                            }
-                            Label_TotalDinero.Text = venta.ToString();
-                            break;
-                    }
+
+                        }
+                        Label_TotalDinero.Text = venta.ToString();
+                        break;
                 }
-           
+            }
         }
-
-       
-
     }
 }
