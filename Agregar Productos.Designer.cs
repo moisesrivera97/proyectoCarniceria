@@ -28,150 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.Input_CodigoProveedor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Input_Precio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Input_NomProd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Boton_Verificar = new System.Windows.Forms.Button();
-            this.Input_NumProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.textBoxNumeroProducto = new TextBox3.TextBoxRounded();
+            this.textBoxNombreProducto = new TextBox3.TextBoxRounded();
+            this.textBoxPrecio = new TextBox3.TextBoxRounded();
+            this.textBoxCodigoProveedor = new TextBox3.TextBoxRounded();
+            this.buttonAgregar = new ePOSOne.btnProduct.Button_WOC();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(129, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 29);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Agregar";
-            // 
-            // Input_CodigoProveedor
-            // 
-            this.Input_CodigoProveedor.Location = new System.Drawing.Point(135, 219);
-            this.Input_CodigoProveedor.Name = "Input_CodigoProveedor";
-            this.Input_CodigoProveedor.Size = new System.Drawing.Size(69, 20);
-            this.Input_CodigoProveedor.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 222);
+            this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(72, 215);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 13);
+            this.label4.Size = new System.Drawing.Size(184, 19);
             this.label4.TabIndex = 30;
             this.label4.Text = "Codigo Del Proveedor";
-            // 
-            // Input_Precio
-            // 
-            this.Input_Precio.Location = new System.Drawing.Point(134, 178);
-            this.Input_Precio.Name = "Input_Precio";
-            this.Input_Precio.Size = new System.Drawing.Size(70, 20);
-            this.Input_Precio.TabIndex = 29;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 181);
+            this.label3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(162, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 28;
             this.label3.Text = "Precio (Kg)";
-            // 
-            // Input_NomProd
-            // 
-            this.Input_NomProd.Location = new System.Drawing.Point(135, 132);
-            this.Input_NomProd.Name = "Input_NomProd";
-            this.Input_NomProd.Size = new System.Drawing.Size(181, 20);
-            this.Input_NomProd.TabIndex = 27;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 134);
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(72, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 13);
+            this.label2.Size = new System.Drawing.Size(184, 19);
             this.label2.TabIndex = 26;
             this.label2.Text = "Nombre Del Producto";
-            // 
-            // Boton_Verificar
-            // 
-            this.Boton_Verificar.Location = new System.Drawing.Point(111, 263);
-            this.Boton_Verificar.Name = "Boton_Verificar";
-            this.Boton_Verificar.Size = new System.Drawing.Size(130, 38);
-            this.Boton_Verificar.TabIndex = 25;
-            this.Boton_Verificar.Text = "Agregar";
-            this.Boton_Verificar.UseVisualStyleBackColor = true;
-            this.Boton_Verificar.Click += new System.EventHandler(this.Boton_Verificar_Click);
-            // 
-            // Input_NumProducto
-            // 
-            this.Input_NumProducto.Location = new System.Drawing.Point(137, 87);
-            this.Input_NumProducto.Name = "Input_NumProducto";
-            this.Input_NumProducto.Size = new System.Drawing.Size(67, 20);
-            this.Input_NumProducto.TabIndex = 24;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 94);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(75, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(181, 19);
             this.label1.TabIndex = 23;
             this.label1.Text = "Numero del Producto";
             // 
-            // pictureBox1
+            // textBoxNumeroProducto
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 10);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.textBoxNumeroProducto.colorBottom = System.Drawing.Color.White;
+            this.textBoxNumeroProducto.colorTop = System.Drawing.Color.Silver;
+            this.textBoxNumeroProducto.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumeroProducto.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxNumeroProducto.Location = new System.Drawing.Point(288, 91);
+            this.textBoxNumeroProducto.Name = "textBoxNumeroProducto";
+            this.textBoxNumeroProducto.Size = new System.Drawing.Size(320, 27);
+            this.textBoxNumeroProducto.TabIndex = 33;
+            // 
+            // textBoxNombreProducto
+            // 
+            this.textBoxNombreProducto.colorBottom = System.Drawing.Color.White;
+            this.textBoxNombreProducto.colorTop = System.Drawing.Color.Silver;
+            this.textBoxNombreProducto.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNombreProducto.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxNombreProducto.Location = new System.Drawing.Point(288, 131);
+            this.textBoxNombreProducto.Name = "textBoxNombreProducto";
+            this.textBoxNombreProducto.Size = new System.Drawing.Size(320, 27);
+            this.textBoxNombreProducto.TabIndex = 34;
+            // 
+            // textBoxPrecio
+            // 
+            this.textBoxPrecio.colorBottom = System.Drawing.Color.White;
+            this.textBoxPrecio.colorTop = System.Drawing.Color.Silver;
+            this.textBoxPrecio.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPrecio.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxPrecio.Location = new System.Drawing.Point(288, 173);
+            this.textBoxPrecio.Name = "textBoxPrecio";
+            this.textBoxPrecio.Size = new System.Drawing.Size(320, 27);
+            this.textBoxPrecio.TabIndex = 35;
+            // 
+            // textBoxCodigoProveedor
+            // 
+            this.textBoxCodigoProveedor.colorBottom = System.Drawing.Color.White;
+            this.textBoxCodigoProveedor.colorTop = System.Drawing.Color.Silver;
+            this.textBoxCodigoProveedor.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodigoProveedor.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxCodigoProveedor.Location = new System.Drawing.Point(288, 215);
+            this.textBoxCodigoProveedor.Name = "textBoxCodigoProveedor";
+            this.textBoxCodigoProveedor.Size = new System.Drawing.Size(320, 27);
+            this.textBoxCodigoProveedor.TabIndex = 36;
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAgregar.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonAgregar.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(12)))), ((int)(((byte)(7)))));
+            this.buttonAgregar.FlatAppearance.BorderSize = 0;
+            this.buttonAgregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.Location = new System.Drawing.Point(364, 332);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.buttonAgregar.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.buttonAgregar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.buttonAgregar.Size = new System.Drawing.Size(133, 55);
+            this.buttonAgregar.TabIndex = 37;
+            this.buttonAgregar.Text = "    Agregar";
+            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregar.TextColor = System.Drawing.Color.White;
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.ButtonAgregar_Click);
             // 
             // Agregar_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(837, 399);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.Input_CodigoProveedor);
+            this.Controls.Add(this.buttonAgregar);
+            this.Controls.Add(this.textBoxCodigoProveedor);
+            this.Controls.Add(this.textBoxPrecio);
+            this.Controls.Add(this.textBoxNombreProducto);
+            this.Controls.Add(this.textBoxNumeroProducto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Input_Precio);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Input_NomProd);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Boton_Verificar);
-            this.Controls.Add(this.Input_NumProducto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar_Productos";
             this.Text = "Agregar_Productos";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Input_CodigoProveedor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Input_Precio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Input_NomProd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Boton_Verificar;
-        private System.Windows.Forms.TextBox Input_NumProducto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private TextBox3.TextBoxRounded textBoxNumeroProducto;
+        private TextBox3.TextBoxRounded textBoxNombreProducto;
+        private TextBox3.TextBoxRounded textBoxPrecio;
+        private TextBox3.TextBoxRounded textBoxCodigoProveedor;
+        private ePOSOne.btnProduct.Button_WOC buttonAgregar;
     }
 }

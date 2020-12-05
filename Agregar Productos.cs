@@ -14,15 +14,22 @@ namespace PROYECTOIS1
         {
             InitializeComponent();
         }
+        private void _limpiarCampos()
+        {
+            textBoxNombreProducto.Text = "";
+            textBoxPrecio.Text = "";
+            textBoxCodigoProveedor.Text = "";
+            textBoxNumeroProducto.Text = "";
+        }
 
-        private void Boton_Verificar_Click(object sender, EventArgs e)
+        private void ButtonAgregar_Click(object sender, EventArgs e)
         {
             try
             {
-                int BD_idProducto = int.Parse(Input_NumProducto.Text);
-                string BD_nombre = Input_NomProd.Text.ToUpper();
-                double BD_precio = double.Parse(Input_Precio.Text);
-                int BD_fkProveedor = int.Parse(Input_CodigoProveedor.Text);
+                int BD_idProducto = int.Parse(textBoxNumeroProducto.Text);
+                string BD_nombre = textBoxNombreProducto.Text.ToUpper();
+                double BD_precio = double.Parse(textBoxPrecio.Text);
+                int BD_fkProveedor = int.Parse(textBoxCodigoProveedor.Text);
 
                 if (BD_idProducto > 0 && BD_nombre.Length > 0 && BD_precio > 0 && BD_fkProveedor > 0)
                 {
@@ -70,17 +77,6 @@ namespace PROYECTOIS1
                 MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
         }
-        private void _limpiarCampos()
-        {
-            Input_NomProd.Text = "";
-            Input_Precio.Text = "";
-            Input_CodigoProveedor.Text = "";
-            Input_NumProducto.Text = "";
-
-
-        }
-       
     }
 }

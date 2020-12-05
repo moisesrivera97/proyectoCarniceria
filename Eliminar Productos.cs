@@ -18,12 +18,27 @@ namespace PROYECTOIS1
         public Eliminar_Productos()
         {
             InitializeComponent();
+            buttonModificar.Enabled = false;
+            buttonLimpiar.Enabled = false;
         }
-        private void Boton_Verificar_Click(object sender, EventArgs e)
+        private void _limpiarCampos()
+        {
+            textBoxNombreProducto.Text = "";
+            textBoxPrecio.Text = "";
+            textBoxCodigoProveedor.Text = "";
+            textBoxNumeroProducto.Text = "";
+
+            buttonModificar.Enabled = false;
+            buttonLimpiar.Enabled = false;
+            buttonVerificar.Enabled = true;
+            textBoxNumeroProducto.Enabled = true;
+        }
+
+        private void ButtonVerificar_Click(object sender, EventArgs e)
         {
             try
             {
-                int BD_idProveedor = int.Parse(Input_NumProducto.Text);
+                int BD_idProveedor = int.Parse(textBoxNumeroProducto.Text);
                 string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Verificar.php";
 
                 using (WebClient client = new WebClient())
@@ -38,7 +53,7 @@ namespace PROYECTOIS1
                     {
                         case '0':
                             MessageBox.Show("NO EXISTE NINGUN PRODUCTO CON EL CODIGO: " + BD_idProveedor, "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Input_NumProducto.Text = "";
+                            textBoxNumeroProducto.Text = "";
                             break;
 
                         case '9':
@@ -48,17 +63,17 @@ namespace PROYECTOIS1
                         default:
                             char SW_delimitador = ',';
                             string[] SW_campos = SW_respuesta.Split(SW_delimitador);
-                            Input_NomProd.Text = SW_campos[0];
-                            Input_Precio.Text = SW_campos[1];
-                            Input_CodigoProveedor.Text = SW_campos[2];
-                            Boton_Eliminar.Enabled = true;
-                            Boton_Limpiar.Enabled = true;
-                            Boton_Verificar.Enabled = false;
-                            Input_NumProducto.Enabled = false;
+                            textBoxNombreProducto.Text = SW_campos[0];
+                            textBoxPrecio.Text = SW_campos[1];
+                            textBoxCodigoProveedor.Text = SW_campos[2];
+                            buttonModificar.Enabled = true;
+                            buttonLimpiar.Enabled = true;
+                            buttonVerificar.Enabled = false;
+                            textBoxNumeroProducto.Enabled = false;
                             break;
                     }
-                    
-                   
+
+
 
                 }
 
@@ -71,11 +86,16 @@ namespace PROYECTOIS1
             }
         }
 
-        private void Boton_Eliminar_Click(object sender, EventArgs e)
+        private void ButtonLimpiar_Click(object sender, EventArgs e)
+        {
+            _limpiarCampos();
+        }
+
+        private void ButtonModificar_Click(object sender, EventArgs e)
         {
             try
             {
-                int BD_idProveedor = int.Parse(Input_NumProducto.Text);
+                int BD_idProveedor = int.Parse(textBoxNumeroProducto.Text);
                 string urlAddress = "https://ismaelzepedaudg.000webhostapp.com/Proyecto_Carniceria/Producto_Eliminar.php";
 
                 using (WebClient client = new WebClient())
@@ -108,7 +128,7 @@ namespace PROYECTOIS1
                     }
                     _limpiarCampos();
 
-                 
+
 
 
                 }
@@ -120,26 +140,6 @@ namespace PROYECTOIS1
                 MessageBox.Show("Ingresaste un dato erroneo; Revisa que los datos que ingresaste sean correctos, puede que hayas escrito mal algo o que falte algun dato.", "ERROR #3:", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-
-        }
-
-        private void Boton_Limpiar_Click(object sender, EventArgs e)
-        {
-            _limpiarCampos();
-        }
-
-        private void _limpiarCampos()
-        {
-            Input_NomProd.Text = "";
-            Input_Precio.Text = "";
-            Input_CodigoProveedor.Text = "";
-            Input_NumProducto.Text = "";
-
-            Boton_Eliminar.Enabled = false;
-            Boton_Limpiar.Enabled = false;
-            Boton_Verificar.Enabled = true;
-            Input_NumProducto.Enabled = true;
         }
     }
 }
